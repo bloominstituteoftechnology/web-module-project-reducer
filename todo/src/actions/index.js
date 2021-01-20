@@ -5,3 +5,10 @@ export const addTodo = title => {
         payload: title
     });
 }
+
+export const toggleCompleted = id => {
+    return({
+        type: "TOGGLE_COMPLETED",
+        payload: id
+    });
+}
