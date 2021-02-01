@@ -1,13 +1,57 @@
+/*W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 CSS3,
+Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive cross browser supported,
+best quality world class designs.*/
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #574b90;
+  font-family: 'Lato', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.col-xs-4 {
+  padding: 0;
+}
+
+.form-control {
+  border-color: #6c5ce7 !important;
+}
+
+button,
+textarea {
+  border-radius: 0px !important;
+  font-size: 24px !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  width: 100px;
+  text-align: center;
+  padding: 15px !important;
+  outline: none;
+  background-color: #546de5 !important;
+  border-color: #6c5ce7 !important;
+  color: #fff !important;
+}
+
+.btn-primary:focus,
+.btn-primary,
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.col-xs-6 button {
+  width: 150px;
+}
+
+.form-control:nth-child(1) {
+  height: 150px;
+}
+
+.form-group {
+  margin-bottom: 0px;
 }
