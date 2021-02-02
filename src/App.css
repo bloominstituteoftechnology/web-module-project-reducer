@@ -27,3 +27,7 @@
 .App-link {
   color: #61dafb;
 }
+
+.navbar-brand img {
+  padding: 5px;
+}
