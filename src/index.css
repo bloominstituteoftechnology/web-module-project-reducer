@@ -38,6 +38,22 @@ button {
   color: #fff !important;
 }
 
+button:hover {
+  background-color: #8e9fec !important;
+}
+
+button:active {
+  background-color: #8393dd !important;
+}
+
+.ce_button .col-xs-4{
+  width: 100%;
+}
+
+.ce_button .col-xs-4 .btn{
+  width: 100% !important;
+}
+
 .btn-primary:focus,
 .btn-primary,
 .form-control:focus {
@@ -54,4 +70,12 @@ button {
 
 .form-group {
   margin-bottom: 0px;
+}
+
+.operation {
+  text-align: right !important;
+  position: absolute;
+  color: #cacdcf;
+  top: 105px;
+  font-size:2em;
 }

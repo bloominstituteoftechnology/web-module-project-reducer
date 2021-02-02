@@ -6,21 +6,35 @@ import './App.css';
 import AnswerDisplay from './components/AnswerDisplay';
 import CalcButton from './components/CalcButton';
 
-import {addOne} from './actions';
+import {applyNumber, changeOperation, clearDisplay} from './actions';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const handleOneClick = ()=>{
-    dispatch(addOne());
+  const handleNumberClick = (number)=>{
+    dispatch(applyNumber(number));
   };
 
-  console.log('state ', state);
+  const handlePlusClick = () => {
+    dispatch(changeOperation("+"));
+  }
+
+  const handleMultiplyClick = () => {
+    dispatch(changeOperation("*"));
+  }
+
+  const handleMinusClick = () => {
+    dispatch(changeOperation("-"));
+  }
+
+  const handleClearClick = () => {
+    dispatch(clearDisplay());
+  }
 
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">Lambda Calculator</a>
+        <a className="navbar-brand" href="#"><img width="50px" src="https://fearlesssalarynegotiation.com/images/lambda_logo.png"/> Lambda Reducer Calculator</a>
       </nav>
 
       <div className = "container row mt-5">
@@ -28,6 +42,10 @@ function App() {
           <form name="Cal">
             
             <AnswerDisplay value={state.total}/>
+            <div className="operation">
+              <span>{state.operation}</span>
+            </div>
+
             {/* <div className="row">
               <CalcButton value={"M+"}/>
               <CalcButton value={"MR"}/>
@@ -35,38 +53,31 @@ function App() {
             </div> */}
 
             <div className="row">
-              <CalcButton value={1} handleClick={handleOneClick}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} handleClick={()=>{ handleNumberClick(1); }}/>
+              <CalcButton value={2} handleClick={()=>{ handleNumberClick(2); }}/>
+              <CalcButton value={3} handleClick={()=>{ handleNumberClick(3); }}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} handleClick={()=>{ handleNumberClick(4); }}/>
+              <CalcButton value={5} handleClick={()=>{ handleNumberClick(5); }}/>
+              <CalcButton value={6} handleClick={()=>{ handleNumberClick(6); }}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} handleClick={()=>{ handleNumberClick(7); }}/>
+              <CalcButton value={8} handleClick={()=>{ handleNumberClick(8); }}/>
+              <CalcButton value={9} handleClick={()=>{ handleNumberClick(9); }}/>
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={8}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} handleClick={handlePlusClick}/>
+              <CalcButton value={"*"} handleClick={handleMultiplyClick}/>
+              <CalcButton value={"-"} handleClick={handleMinusClick}/>
             </div>
 
-            <div className="row">
-              <CalcButton value={"/"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"⟵"}/>
-            </div>
-
-            <div className="row">
-              <CalcButton value={"="} size={6}/>
-              <CalcButton value={"CE"} size={6}/>
+            <div className="row ce_button">
+              <CalcButton value={"CE"} handleClick={handleClearClick}/>
             </div>
 
           </form>
