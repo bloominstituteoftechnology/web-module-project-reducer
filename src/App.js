@@ -6,7 +6,7 @@ import './App.css';
 import AnswerDisplay from './components/AnswerDisplay';
 import CalcButton from './components/CalcButton';
 
-import {applyNumber, changeOperation, clearDisplay} from './actions';
+import {applyNumber, changeOperation, clearDisplay, addMemory, clearMemory, recallMemory} from './actions';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -31,6 +31,18 @@ function App() {
     dispatch(clearDisplay());
   }
 
+  const handleAddMemory = () => {
+    dispatch(addMemory());
+  }
+
+  const handleRecallMemory = () => {
+    dispatch(recallMemory());
+  }
+
+  const handleClearMemory = () => {
+    dispatch(clearMemory());
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -42,15 +54,16 @@ function App() {
           <form name="Cal">
             
             <AnswerDisplay value={state.total}/>
-            <div className="operation">
-              <span>{state.operation}</span>
+            <div className="row details">
+              <span><b>Operation:</b> {state.operation}</span>
+              <span><b>Memory:</b> {state.memory}</span>
             </div>
-
-            {/* <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
-            </div> */}
+            
+            <div className="row">
+              <CalcButton value={"M+"} handleClick={handleAddMemory}/>
+              <CalcButton value={"MR"} handleClick={handleRecallMemory}/>
+              <CalcButton value={"MC"} handleClick={handleClearMemory}/>
+            </div>
 
             <div className="row">
               <CalcButton value={1} handleClick={()=>{ handleNumberClick(1); }}/>
