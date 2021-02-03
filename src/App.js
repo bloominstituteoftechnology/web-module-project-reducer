@@ -5,13 +5,7 @@ import './App.css';
 import AnswerDisplay from './components/AnswerDisplay';
 import CalcButton from './components/CalcButton';
 
-import {addOne} from './actions';
-
 function App() {
-
-  const handleAddOne = () => {
-    
-  }
 
   return (
     <div className="App">
