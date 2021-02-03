@@ -20,7 +20,7 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 ![Calculator Example](project-goals.gif)
 
-*** Make sure to complete your tasks one at a time and completely test each task before proceding forward. ***
+***Make sure to complete your tasks one at a time and completely test each task before proceding forward.***
 
 ### Introduction
 #### Task 1: Project Set Up
@@ -59,7 +59,7 @@ export const initialState = {
 
 
 ### Task 5: Connect a premade action to all number buttons in our UI
-*** Adding indivisual actions for every number would be tedious. Let's add in an action that can work for all numerical input ***
+***Adding indivisual actions for every number would be tedious. Let's add in an action that can work for all numerical input***
 - [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
 - [ ] Import the `applyNumber` action creator into `App.js.`
 - [ ] Remove or comment out the `addOne` event handler from the 1 button.
@@ -70,7 +70,7 @@ export const initialState = {
 - [ ] Test that clicking on each button will add it's respective value to the total display.
 
 ### Task 6: Create and connect an action creator for changing operations.
-*** Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own! ***
+***Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!***
 - [ ] Note the `CHANGE_OPERATION` action case (in ./reducer/index.js). This reducer case takes in a operator value (+, * or -) and assigns it to state.
 - [ ] Create an action creator (in ./actions/index.js) that takes in an opperator as an argument and creates an action object with the type `CHANGE_OPERATION.`
 - [ ] Import in your new action creator into `App.js.`
@@ -78,7 +78,7 @@ export const initialState = {
 - [ ] Test that you can successfully change operators and apply numbers in each case.
 
 ### Task 7: Create and connect an reducer case and action creator for clearing the display.
-*** Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own! ***
+***Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!***
 - [ ] Within `./reducers/index,` add in a case for CLEAR_DISPLAY. Clear display should set the total value in state to 0.
 - [ ] Within `./actions/index,` add in an action creator and action string constant to for CLEAR_DISPLAY. Make sure to import that constant into your reducer file.
 - [ ] Within `App.js,` import in your clearDisplay action creator.
@@ -86,9 +86,9 @@ export const initialState = {
 - [ ] Test that your clearDisplay button works as expected.
 
 ### Task 8: Add in memory functions from scratch!
-*** Congradulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions. ***
+***Congradulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions.***
 
-*** IN EACH CASE, ALWAYS TEST YOU FEATURE WORKS BEFORE PROCEEDING FORWARD. ***
+***IN EACH CASE, ALWAYS TEST YOU FEATURE WORKS BEFORE PROCEEDING FORWARD.***
 
 - [ ] When `M+` is pressed, the total value in state should be placed inside of the memory value in state. Test by seeing the result of memory in the UI.
 
