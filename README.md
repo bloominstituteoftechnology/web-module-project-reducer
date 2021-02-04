@@ -32,15 +32,17 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 #### Task 2: Connect the reducer and intitialState to the component.
 - [ ] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
-- [ ] Within App.js, import the useReducer hook, our application's reducer and our application's initialState.
-- [ ] Use useReducer hook to get access to the application state and dispatch.
+- [ ] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+- [ ] Note that the `CalcButton` component takes in an onClick method and a value, displays that value and attaches the passed onClick method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+- [ ] Within App.js, import the useReducer hook, our application's reducer and initialState object.
+- [ ] Use useReducer hook to get access to the application state and the dispatch function.
 
 #### Task 3: Connect the state to our App.js UI.
 - [ ] Replace "X" with a reference to `state.operation` within the operation element.
 - [ ] Replace "0" with a reference to `state.memory` within the memory element.
-- [ ] Replace "0" with a reference to `state.total` when passing a value to our AnswerDisplay component.
+- [ ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
 - [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, / and 100 respectively)
-- [ ] Test you are connected to state by changing the initialState value in your reducer to:
+- [ ] **Test** that you are connected to state by changing the initialState value in your reducer to:
 ```
 export const initialState = {
     total: 0,
@@ -55,7 +57,8 @@ export const initialState = {
 - [ ] Import the `addOne` action creator into App.js.
 - [ ] Within `App.js`, create an event handler connected to the 1 button's onCl`ick method.
 - [ ] Within your event handler, dispatch the `addOne` action creator.
-- [ ] Test that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
+- [ ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
+- [ ] **Think** about the path of excuction from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
 
 
 #### Task 5: Connect a premade action to all number buttons in our UI.
@@ -65,9 +68,9 @@ export const initialState = {
 - [ ] Remove or comment out the `addOne` event handler from the 1 button.
 - [ ] Create an eventhandler that takes in a number as an argument and dispatchs `applyNumber` with it.
 - [ ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
-- [ ] Test that clicking the one button still adds one to the total display on the browser.
+- [ ] **Test** that clicking the one button still adds one to the total display on the browser.
 - [ ] Connect all other number buttons to your new event handler, passing in their respective values.
-- [ ] Test that clicking on each button will add it's respective value to the total display.
+- [ ] **Test** that clicking on each button will add it's respective value to the total display.
 
 #### Task 6: Create and connect an action creator for changing operations.
 ***Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!***
@@ -75,7 +78,7 @@ export const initialState = {
 - [ ] Create an action creator (in `./actions/index.js`) that takes in an opperator as an argument and creates an action object with the type `CHANGE_OPERATION.`
 - [ ] Import in your new action creator into `App.js.`
 - [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the approprate operator string in each case.
-- [ ] Test that you can successfully change operators and apply numbers in each case.
+- [ ] **Test** that you can successfully change operators and apply numbers in each case.
 
 #### Task 7: Create and connect an reducer case and action creator for clearing the display.
 ***Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!***
@@ -83,10 +86,10 @@ export const initialState = {
 - [ ] Within `./actions/index,` add in an action creator and action string constant to for `CLEAR_DISPLAY`. Make sure to import that constant into your reducer file.
 - [ ] Within `App.js,` import in your clearDisplay action creator.
 - [ ] Create and connect an event handler to the "CE" button that dispatches your clearDisplay action creator.
-- [ ] Test that your clearDisplay button works as expected.
+- [ ] **Test** that your clearDisplay button works as expected.
 
 #### Task 8: Add in memory functions from scratch.
-***Congradulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions.***
+***Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions.***
 
 ***IN EACH CASE, ALWAYS TEST YOU FEATURE WORKS BEFORE PROCEEDING FORWARD.***
 
@@ -98,3 +101,5 @@ export const initialState = {
 
 
 ### Stretch goals
+- [ ] There is a version of the calculator focuses on adding individsual digits, rather then entire numbers. How do you imagine add an indivisual digit to a the total state?
+- [ ] [Here is an example](https://freshman.tech/calculator/) of a (non-reducer) approach to building an javascript calculator. Feel free to make a new branch and use the basic ideas in the post to build a new version of the calculator.

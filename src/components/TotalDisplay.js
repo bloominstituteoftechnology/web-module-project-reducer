@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const AnswerDisplay = (props) => {
+const TotalDisplay = (props) => {
     const { value } = props;
     
     return(
@@ -14,4 +14,4 @@ const AnswerDisplay = (props) => {
     </div>);
 }
 
-export default AnswerDisplay;
+export default TotalDisplay;
