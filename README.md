@@ -96,6 +96,6 @@ export const initialState = {
 * [ ] When `MC` is pressed, the memory value is set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
-### Stretch goals
+### Task 3: Stretch goals
 - [ ] There is a version of the calculator focuses on adding individsual digits, rather then entire numbers. How do you imagine add an indivisual digit to a the total state?
 - [ ] [Here is an example](https://freshman.tech/calculator/) of a (non-reducer) approach to building an javascript calculator. Feel free to make a new branch and use the basic ideas in the post to build a new version of the calculator.
