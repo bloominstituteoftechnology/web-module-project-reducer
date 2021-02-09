@@ -27,7 +27,7 @@ This simplified calculator adds the entire number selected, rather then adds dig
 * [ ] Start up the app using `npm start`
 
 ### Task 2: Project Requirements
-#### Connect the reducer
+#### Connect The Reducer
 *Let's start our process by connecting our UI to our reducer and initial state.*
 * [ ] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
 * [ ] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
