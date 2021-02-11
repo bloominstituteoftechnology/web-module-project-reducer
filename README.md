@@ -1,4 +1,4 @@
-# The Reducer Pattern Module Project: The Caluclator
+# The Reducer Pattern Module Project: The Calculator
 
 This module explored the reducer pattern. During the module, you studied what immutability is, what reducers, actions and dispatch are, and how to use the reducer hook. In this project, you will practice each of the steps of building state and actions into an application. We will do this by both adding in and building from scratch all of the pieces of the reducer pattern.
 
@@ -31,7 +31,7 @@ This simplified calculator adds the entire number selected, rather then adds dig
 > *Let's start our process by connecting our UI to our reducer and initial state.*
 * [ ] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
 * [ ] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
-* [ ] Note that the `CalcButton` component takes in an onClick method and a value, displays that value and attaches the passed onClick method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+* [ ] Note that the `CalcButton` component takes in an `onClick` method and a value, displays that value and attaches the passed `onClick` method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
 * [ ] Within App.js, import the useReducer hook, our application's reducer and initialState object.
 * [ ] Use useReducer hook to get access to the application state and the dispatch function.
 
@@ -55,10 +55,10 @@ export const initialState = {
 > *Now that we can see our state, let's change allow the user to change it. Let's start with a simple premade action...adding one to our total.*
 * [ ] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
 * [ ] Import the `addOne` action creator into App.js.
-* [ ] Within `App.js`, create an event handler connected to the 1 button's onCl`ick method.
+* [ ] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
 * [ ] Within your event handler, dispatch the `addOne` action creator.
 * [ ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
-* [ ] **Think** about the path of excuction from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
+* [ ] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
 
 
 #### Connect a better premade action.
@@ -66,18 +66,18 @@ export const initialState = {
 * [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
 * [ ] Import the `applyNumber` action creator into `App.js.`
 * [ ] Remove or comment out the `addOne` event handler from the 1 button.
-* [ ] Create an eventhandler that takes in a number as an argument and dispatchs `applyNumber` with it.
+* [ ] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
 * [ ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
 * [ ] **Test** that clicking the one button still adds one to the total display on the browser.
 * [ ] Connect all other number buttons to your new event handler, passing in their respective values.
-* [ ] **Test** that clicking on each button will add it's respective value to the total display.
+* [ ] **Test** that clicking on each button will add its respective value to the total display.
 
 #### Create and connect an action creator.
 > *Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!*
 * [ ] Note the `CHANGE_OPERATION` action case (in `./reducer/index.js`). This reducer case takes in a operator value (+, * or -) and assigns it to state.
-* [ ] Create an action creator (in `./actions/index.js`) that takes in an opperator as an argument and creates an action object with the type `CHANGE_OPERATION.`
+* [ ] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`
 * [ ] Import in your new action creator into `App.js.`
-* [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the approprate operator string in each case.
+* [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
 * [ ] **Test** that you can successfully change operators and apply numbers in each case.
 
 #### Create and connect an reducer case and action creator.
@@ -91,11 +91,11 @@ export const initialState = {
 #### Task 8: Add in memory functions from scratch.
 > *Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions. IN EACH CASE, ALWAYS TEST YOU FEATURE WORKS BEFORE PROCEEDING FORWARD.*
 
-* [ ] When `M+` is pressed, the total value in state should be placed inside of the memory value in state. Test by seeing the result of memory in the UI.
-* [ ] When `MF` is pressed, the total value in state should be applied to the memory value in state using the current operator. Test by adding a value to memory and then seeing if the total updates correctly when pressed.
-* [ ] When `MC` is pressed, the memory value is set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
+* [ ] When `M+` is pressed, the state's current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
+* [ ] When `MF` is pressed, the state's current total value should be set to the current total value applied to the current memory value (See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
+* [ ] When `MC` is pressed, the state's current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
 ### Task 3: Stretch goals
-- [ ] There is a version of the calculator focuses on adding individsual digits, rather then entire numbers. How do you imagine add an indivisual digit to a the total state?
+- [ ] There is a version of the calculator focuses on adding individual digits, rather then entire numbers. How do you imagine add an individual digit to a the total state?
 - [ ] [Here is an example](https://freshman.tech/calculator/) of a (non-reducer) approach to building an javascript calculator. Feel free to make a new branch and use the basic ideas in the post to build a new version of the calculator.
