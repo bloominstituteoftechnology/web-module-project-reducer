@@ -5,8 +5,8 @@ This module explored the reducer pattern. During the module, you studied what im
 ## Objectives
 - Understand how to use useReducer hook.
 - Get comfortable connecting a reducer state to an application's UI.
-- Understand how to create actions cases and action creators.
-- Successfully connect UI user events to the triggering of reducer actions.
+- Successfully connect UI user events to the dispatching of reducer actions.
+- Understand how to create reducer cases and the action creators that trigger them.
 - Learn how to step through and test thoroughly each step of the process.
 
 ## Introduction
