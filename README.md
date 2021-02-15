@@ -92,7 +92,7 @@ export const initialState = {
 > *Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions. IN EACH CASE, ALWAYS TEST YOU FEATURE WORKS BEFORE PROCEEDING FORWARD.*
 
 * [ ] When `M+` is pressed, the state's current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
-* [ ] When `MF` is pressed, the state's current total value should be set to the current total value applied to the current memory value (See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
+* [ ] When `MR` is pressed, the state's current total value should be set to the current total value applied to the current memory value (See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
 * [ ] When `MC` is pressed, the state's current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
