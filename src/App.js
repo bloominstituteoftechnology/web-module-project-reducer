@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState} from "./reducers/index"
-import { addOne, applyNumber } from "./actions/index"
+import { applyNumber, changeOperator } from "./actions/index"
 
 import './App.css';
 
@@ -18,6 +18,11 @@ function App() {
   const handleTap = (e) => {
     const value = Number(e.target.textContent);
     dispatch(applyNumber(value))
+  }
+
+  const toggleOperator = (e) => {
+    const value=e.target.textContent;
+    dispatch(changeOperator(value))
   }
 
   return (
@@ -61,9 +66,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={toggleOperator}/>
+              <CalcButton value={"*"} onClick={toggleOperator}/>
+              <CalcButton value={"-"} onClick={toggleOperator}/>
             </div>
 
             <div className="row ce_button">
