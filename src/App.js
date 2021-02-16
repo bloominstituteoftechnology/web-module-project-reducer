@@ -15,8 +15,8 @@ function App() {
   const onClick = (number) =>{
     dispatch(applyNumber(number))
   }
-  const changeClick = () =>{
-    dispatch(changeOperation())
+  const changeClick = (operation) =>{
+    dispatch(changeOperation(operation))
   }
 
   return (
