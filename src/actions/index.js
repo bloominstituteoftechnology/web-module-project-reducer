@@ -3,6 +3,7 @@ export const ADD_ONE = "ADD_ONE";
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
+export const SET_MEMORY = "SET_MEMORY";
 
 
 export const addOne = () => {
@@ -25,3 +26,5 @@ export const clearDisplay = () => {
         type: CLEAR_DISPLAY
     }
 }
+
+export const setMemory = () => ({ type: SET_MEMORY })
