@@ -14,6 +14,8 @@ const calculateResult = (num1, num2, operation) => {
             return num1 * num2;
         case("-"):
             return num1 - num2;
+        default:
+            throw new Error(`Unrecognized operation: ${operation}`)
     }
 }
 
@@ -26,7 +28,6 @@ const reducer = (state, action) => {
             });
 
         case(APPLY_NUMBER):
-            console.log('Apply Number')
             return ({ 
                 ...state, 
                 total: calculateResult(state.total, action.payload, state.operation)
