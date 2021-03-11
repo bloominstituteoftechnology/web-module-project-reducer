@@ -48,7 +48,7 @@ function App() {
 
             <div className="row">
               <CalcButton value={7} onClick={() => dispatch(applyNumber(7))} />
-              <CalcButton value={8} onClick={() => dispatch(applyNumber(8))}/>
+              <CalcButton value={8} onClick={() => dispatch(applyNumber(8))} />
               <CalcButton value={9} onClick={() => dispatch(applyNumber(9))} />
             </div>
 
