@@ -46,7 +46,6 @@ const reducer = (state, action) => {
             })
 
         case(SET_MEMORY):
-            console.log('set')
             return ({
                 ...state,
                 memory: state.total
