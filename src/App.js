@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 //REDUCER
 import reducer, {initialState} from './reducers/index'
 //ACTIONS
-import {applyNumber, changeOperation, clearCalc, storeMemory} from './actions/index'
+import {applyNumber, changeOperation, clearCalc, recallMemory, storeMemory, clearMemory} from './actions/index'
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
@@ -31,8 +31,12 @@ function App() {
               <CalcButton value={"M+"} onClick={()=>{
                 dispatch(storeMemory(state.total))
               }}/>
-              <CalcButton value={"MR"} onClick={()=>{}}/>
-              <CalcButton value={"MC"} onClick={()=>{}}/>
+              <CalcButton value={"MR"} onClick={()=>{
+                dispatch(recallMemory(state.memory))
+              }}/>
+              <CalcButton value={"MC"} onClick={()=>{
+                dispatch(clearMemory(0))
+              }}/>
             </div>
 
             <div className="row">

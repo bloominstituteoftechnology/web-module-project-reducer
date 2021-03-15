@@ -4,6 +4,8 @@ export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_CALC = "CLEAR_CALC";
 export const MEM_STORED = "MEM_STORED"
+export const M_R = 'M_R'
+export const M_C ="M_C"
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -23,4 +25,12 @@ export const clearCalc = () =>{
 
 export const storeMemory = (currentMemory) =>{
     return({type: MEM_STORED, payload: currentMemory})
+}
+
+export const recallMemory = (memory) =>{
+    return({type:M_R, payload: memory })
+}
+
+export const clearMemory = () =>{
+    return({type:M_C })
 }
