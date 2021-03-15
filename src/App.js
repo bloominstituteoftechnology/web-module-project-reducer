@@ -22,6 +22,12 @@ function App() {
   };
   const handleAddMemory = () => {
     dispatch(actions.addMemory());
+  };
+  const handleRecallMemory = () => {
+    dispatch(actions.recallMemory());
+  };
+  const handleClearMemory = () => {
+    dispatch(actions.clearMemory());
   }
 
   return (
@@ -50,8 +56,8 @@ function App() {
 
             <div className="row">
               <CalcButton onClick={() => handleAddMemory()} value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton onClick={() => handleRecallMemory()} value={"MR"} />
+              <CalcButton onClick={() => handleClearMemory()} value={"MC"} />
             </div>
 
             <div className="row">
