@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 //REDUCER
 import reducer, {initialState} from './reducers/index'
 //ACTIONS
-import {applyNumber, changeOperation} from './actions/index'
+import {applyNumber, changeOperation, clearCalc, storeMemory} from './actions/index'
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
@@ -28,9 +28,11 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={()=>{
+                dispatch(storeMemory(state.total))
+              }}/>
+              <CalcButton value={"MR"} onClick={()=>{}}/>
+              <CalcButton value={"MC"} onClick={()=>{}}/>
             </div>
 
             <div className="row">
@@ -82,7 +84,9 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={()=>{
+                dispatch(clearCalc())
+              }}/>
             </div>
 
           </form>
