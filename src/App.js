@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState } from './reducers';
-import { applyNumber } from './actions';
+import { applyNumber, changeOperation, clearDisplay, memoryOperation } from './actions';
 
 import './App.css';
 
@@ -28,9 +28,24 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton 
+                value={"M+"}
+                onClick={(n) => {
+                  dispatch(memoryOperation("M+"))
+                }}
+              />
+              <CalcButton 
+                value={"MR"}
+                onClick={(n) => {
+                  dispatch(memoryOperation("MR"))
+                }}
+              />
+              <CalcButton 
+                value={"MC"}
+                onClick={(n) => {
+                  dispatch(memoryOperation("MC"))
+                }}
+              />
             </div>
 
             <div className="row">
@@ -64,31 +79,66 @@ function App() {
               <CalcButton 
                 value={5}
                 onClick={(n) => {
-                  dispatch(applyNumber(3))
+                  dispatch(applyNumber(5))
                 }}
               />
               <CalcButton  
                 value={6}
                 onClick={(n) => {
-                  dispatch(applyNumber(3))
+                  dispatch(applyNumber(6))
                 }}
               />
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton 
+                value={7}
+                onClick={(n) => {
+                  dispatch(applyNumber(7))
+                }}
+              />
+              <CalcButton 
+                value={8}
+                onClick={(n) => {
+                  dispatch(applyNumber(8))
+                }}
+              />
+              <CalcButton 
+                value={9}
+                onClick={(n) => {
+                  dispatch(applyNumber(9))
+                }}
+              />
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton 
+                value={"+"}
+                onClick={(n) => {
+                  dispatch(changeOperation("+"))
+                }}
+              />
+              <CalcButton 
+                value={"*"}
+                onClick={(n) => {
+                  dispatch(changeOperation("*"))
+                }}
+              />
+              <CalcButton 
+                value={"-"}
+                onClick={(n) => {
+                  dispatch(changeOperation("-"))
+                }}
+              />
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton 
+                value={"CE"}
+                onClick={(n) => {
+                  dispatch(clearDisplay())
+                }}
+              />
             </div>
 
           </form>
