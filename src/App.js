@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import reducer, {initialState} from './reducers';
 import './App.css';
-import {applyNumber} from './actions';
+import {applyNumber, changeOperator, clearDisplay, clearMemory, inputMemory, mathMemory} from './actions';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
@@ -9,12 +9,30 @@ import CalcButton from './components/CalcButton';
 function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state, dispatch);
+  
 
   const eventHandler = (num) => {
     dispatch(applyNumber(num))
   }
 
+  const switchOperator = (value) => {
+    dispatch(changeOperator(value))
+  }
+  
+  const clearCalc = () => {
+    dispatch(clearDisplay())
+  }
+
+  const clearMem = () => {
+    dispatch(clearMemory())
+  }
+
+  const inputMem = () => {
+    dispatch(inputMemory())
+  }
+  const mathMem = () => {
+    dispatch(mathMemory())
+  }
   
   return (
     <div className="App">
@@ -33,13 +51,13 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={inputMem}/>
+              <CalcButton value={"MR"} onClick={mathMem}/>
+              <CalcButton value={"MC"} onClick={clearMem}/>
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={ () => eventHandler(1)}/>
+              <CalcButton value={1} onClick={() => eventHandler(1)}/>
               <CalcButton value={2} onClick={ () => eventHandler(2)}/>
               <CalcButton value={3} onClick={ () => eventHandler(3)}/>
             </div>
@@ -57,13 +75,13 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={() => switchOperator('+')}/>
+              <CalcButton value={"*"} onClick={() => switchOperator('*')}/>
+              <CalcButton value={"-"} onClick={() => switchOperator('-')}/>
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={clearCalc}/>
             </div>
 
           </form>
