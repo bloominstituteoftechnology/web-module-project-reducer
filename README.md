@@ -88,7 +88,7 @@ export const initialState = {
 * [ ] Create and connect an event handler to the "CE" button that dispatches your clearDisplay action creator.
 * [ ] **Test** that your clearDisplay button works as expected.
 
-#### Task 8: Add in memory functions from scratch.
+#### Add in memory functions from scratch.
 > *Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following app features. IN EACH CASE, ALWAYS TEST THAT YOUR FEATURE WORKS BEFORE PROCEEDING FORWARD.*
 
 * [ ] When `M+` is pressed, the current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
@@ -96,6 +96,6 @@ export const initialState = {
 * [ ] When `MC` is pressed, the current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
-### Stretch goals
+### Task 3: Stretch goals
 - [ ] There is a version of the calculator focuses on adding individual digits, rather then entire numbers. How do you imagine adding an individual digit to the total state?
 - [ ] [Here is an example](https://freshman.tech/calculator/) of a (non-reducer) approach to building an javascript calculator. Feel free to make a new branch and use the basic ideas in the post to build a new version of the calculator.
