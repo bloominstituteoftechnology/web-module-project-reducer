@@ -1,7 +1,14 @@
 import React, { useReducer } from "react";
 
 import reducer from "./reducers/index";
-import { applyNumber, changeOperator, clearDisplay } from "./actions/index";
+import {
+	applyNumber,
+	changeOperator,
+	clearDisplay,
+	memoryPlus,
+	memoryClear,
+	memoryRecall,
+} from "./actions/index";
 
 import "./App.css";
 import { initialState } from "./reducers/index";
@@ -10,7 +17,15 @@ import CalcButton from "./components/CalcButton";
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
-
+	const memoryBank = () => {
+		dispatch(memoryRecall());
+	};
+	const memoryAdd = () => {
+		dispatch(memoryPlus());
+	};
+	const memoryReset = () => {
+		dispatch(memoryClear());
+	};
 	const applyNum = (num) => {
 		dispatch(applyNumber(num));
 	};
@@ -46,9 +61,9 @@ function App() {
 						</div>
 
 						<div className="row">
-							<CalcButton value={"M+"} />
-							<CalcButton value={"MR"} />
-							<CalcButton value={"MC"} />
+							<CalcButton onClick={() => memoryAdd()} value={"M+"} />
+							<CalcButton onClick={() => memoryBank()} value={"MR"} />
+							<CalcButton onClick={() => memoryReset()} value={"MC"} />
 						</div>
 
 						<div className="row">
