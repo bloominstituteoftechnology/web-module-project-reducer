@@ -5,6 +5,11 @@ export const initialState = {
     operation: "*",
     memory: 100
 }
+// export const initialState = {
+//     total: 0,
+//     operation: "+",
+//     memory: 0
+// }
 
 const calculateResult = (num1, num2, operation) => {
     switch(operation) {
