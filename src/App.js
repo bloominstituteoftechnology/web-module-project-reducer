@@ -5,9 +5,17 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 import reducer, {initialState} from './reducers/index'
+import {addOne, applyNumber, clearDisplay, changeOperation, memoryAdd, memorySet, memoryReset} from './actions/index'
 
 function App() {
-const [state, dipatch] = useReducer(reducer, initialState)
+const [state, dispatch] = useReducer(reducer, initialState)
+
+const changeNumber = (num) => {
+  dispatch(applyNumber(num));
+}
+const changeOperand = (operator)=>{
+  dispatch(changeOperation(operator))
+}
 
   return (
     <div className="App">
@@ -32,31 +40,31 @@ const [state, dipatch] = useReducer(reducer, initialState)
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={()=>{changeNumber(1)}}/>
+              <CalcButton value={2} onClick={()=>{changeNumber(2)}}/>
+              <CalcButton value={3} onClick={()=>{changeNumber(3)}}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={()=>{changeNumber(4)}}/>
+              <CalcButton value={5} onClick={()=>{changeNumber(5)}}/>
+              <CalcButton value={6} onClick={()=>{changeNumber(6)}}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={()=>{changeNumber(7)}}/>
+              <CalcButton value={8} onClick={()=>{changeNumber(8)}}/>
+              <CalcButton value={9} onClick={()=>{changeNumber(9)}}/>
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={()=>{changeOperand("+")}}/>
+              <CalcButton value={"*"} onClick={()=>{changeOperand("*")}}/>
+              <CalcButton value={"-"} onClick={()=>{changeOperand("-")}}/>
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={()=> {dispatch(clearDisplay())}}/>
             </div>
 
           </form>
