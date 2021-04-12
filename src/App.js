@@ -34,9 +34,9 @@ const changeOperand = (operator)=>{
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={()=>{dispatch(memorySet())}}/>
+              <CalcButton value={"MR"} onClick={()=>{dispatch(memoryAdd())}}/>
+              <CalcButton value={"MC"} onClick={()=>{dispatch(memoryReset())}}/>
             </div>
 
             <div className="row">

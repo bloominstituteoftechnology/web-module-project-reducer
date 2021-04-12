@@ -57,13 +57,13 @@ const reducer = (state, action) => {
         case(MEMORY_ADD):
             return({
                 ...state,
-                memory: state.total
+                total: state.memory + state.total
             })
 
         case(MEMORY_RESET):
             return({
                 ...state,
-                total: state.memory + state.total
+                memory:0
             })
 
         default:
