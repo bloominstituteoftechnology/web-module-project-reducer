@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 
 import reducer from "./reducers/index";
-import { applyNumber, changeOperator } from "./actions/index";
+import { applyNumber, changeOperator, clearDisplay } from "./actions/index";
 
 import "./App.css";
 import { initialState } from "./reducers/index";
@@ -18,9 +18,9 @@ function App() {
 		dispatch(changeOperator(opp));
 	};
 
-	// const applyNum = (num) => {
-	// 	dispatch(applyNumber(num));
-	// };
+	const clearScreen = () => {
+		dispatch(clearDisplay());
+	};
 
 	return (
 		<div className="App">
@@ -76,7 +76,7 @@ function App() {
 						</div>
 
 						<div className="row ce_button">
-							<CalcButton value={"CE"} />
+							<CalcButton value={"CE"} onClick={() => clearScreen()} />
 						</div>
 					</form>
 				</div>

@@ -1,5 +1,5 @@
 export const ADD_ONE = "ADD_ONE";
-
+export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 
@@ -13,4 +13,8 @@ export const applyNumber = (number) => {
 
 export const changeOperator = (opp) => {
 	return { type: CHANGE_OPERATION, payload: opp };
+};
+
+export const clearDisplay = () => {
+	return { type: CLEAR_DISPLAY };
 };
