@@ -27,8 +27,8 @@ export const memorySave = () => {
   return { type: MEMORY_SAVE };
 };
 
-export const memoryRecall = () => {
-  return { type: MEMORY_RECALL };
+export const memoryRecall = (memory) => {
+  return { type: MEMORY_RECALL, payload: memory };
 };
 
 export const memoryClear = () => {
