@@ -1,10 +1,11 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, SAVE_MEMORY, CLEAR_MEMORY, APPLY_MEMORY } from './../actions';
 
-export const initialState = {
-    total: 100,
-    operation: "*",
-    memory: 100
+export const initialState = {   //Changing the values of the initial state to test hookup
+    total: 0,
+    operation: "+",
+    memory: 0
 }
+
 
 const calculateResult = (num1, num2, operation) => {
     switch(operation) {
@@ -36,7 +37,33 @@ const reducer = (state, action) => {
                 ...state,
                 operation: action.payload
             });
+
+        case(CLEAR_DISPLAY):
+            return({
+                ...state,
+                total: 0
+            })
+        //save memory
+        case(SAVE_MEMORY):
+            return({
+                ...state,
+                memory: state.total
+            })
             
+        //clear memory
+        case(CLEAR_MEMORY):
+            return({
+                ...state,
+                memory: 0
+            })
+        
+        //apply memory
+        case(APPLY_MEMORY):
+            return({
+                ...state,
+                total: calculateResult(state.total, state.memory, state.operation)
+            })
+
         default:
             return state;
     }
