@@ -1,18 +1,23 @@
 import React, { useReducer } from "react";
-import index from "./reducers/index";
+import reducer from "./reducers/index";
+import initialState from "./reducers/index";
 import "./App.css";
 import TotalDisplay from "./components/TotalDisplay";
 import CalcButton from "./components/CalcButton";
 
 function App() {
 
-const initialState = {
-    total: 100,
-    operation: "*",
-    memory: 100
-}
+//   const initialState = {
+//     total: 100,
+//     operation: "*",
+//     memory: 100
+// }
 
-  const [state, dispatch] = useReducer(index, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleChanges = e =>  {
+
+  }
 
   return (
     <div className="App">
