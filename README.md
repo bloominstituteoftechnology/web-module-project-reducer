@@ -60,18 +60,18 @@ export const initialState = {
 }
 ```
 
-- [ ] Check to see that your display correctly reflects the change to your state.
+- [ x ] Check to see that your display correctly reflects the change to your state.
 
 #### Connect a premade action.
 
 > _Now that we can see our state, let's change allow the user to change it. Let's start with a simple premade action...adding one to our total._
 
-- [ ] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
-- [ ] Import the `addOne` action creator into App.js.
-- [ ] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
-- [ ] Within your event handler, dispatch the `addOne` action creator.
-- [ ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
-- [ ] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
+- [ x ] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
+- [ x ] Import the `addOne` action creator into App.js.
+- [ x ] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
+- [ x ] Within your event handler, dispatch the `addOne` action creator.
+- [ x ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
+- [ x ] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
 
 #### Connect a better premade action.
 
