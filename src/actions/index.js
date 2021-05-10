@@ -10,3 +10,10 @@ export const addOne = () => {
 export const applyNumber = (number) => {
     return({type:APPLY_NUMBER, payload:number});
 }
+
+export const actionCreator = (operator) => {
+    return({type:CHANGE_OPERATION})
+}
+
+
+// * [ ] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`

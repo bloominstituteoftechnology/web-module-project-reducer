@@ -15,3 +15,5 @@ const TotalDisplay = (props) => {
 }
 
 export default TotalDisplay;
+
+// * [ ] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
