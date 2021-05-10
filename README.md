@@ -93,7 +93,7 @@ export const initialState = {
 
 * [X] When `M+` is pressed, the current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
 * [X] When `MR` is pressed, the current memory value should be applied to the current total value(See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
-* [ ] When `MC` is pressed, the current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
+* [X] When `MC` is pressed, the current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
 ### Task 3: Stretch goals
