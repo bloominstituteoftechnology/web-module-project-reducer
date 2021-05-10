@@ -46,11 +46,11 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 > _We now have access to the state within our App component (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen._
 
-- [ ] Replace "X" with a reference to `state.operation` within the operation element.
-- [ ] Replace "0" with a reference to `state.memory` within the memory element.
-- [ ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
-- [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, \* and 100 respectively)
-- [ ] **Test** that you are connected to state by changing the initialState value in your reducer to:
+- [ x ] Replace "X" with a reference to `state.operation` within the operation element.
+- [ x ] Replace "0" with a reference to `state.memory` within the memory element.
+- [ x ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
+- [ x ] Check to see that your total, operation and memory display in the UI match your initialState (100, \* and 100 respectively)
+- [ x ] **Test** that you are connected to state by changing the initialState value in your reducer to:
 
 ```
 export const initialState = {

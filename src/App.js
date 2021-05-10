@@ -29,7 +29,7 @@ function App() {
             <TotalDisplay value={state.total} />
             <div className="row details">
               <span id="operation">
-                <b>Operation: {state.operation}</b>
+                <b>Operation:</b> {state.operation}
               </span>
               <span id="memory">
                 <b>Memory:</b> {state.memory}
