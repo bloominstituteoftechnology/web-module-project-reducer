@@ -6,6 +6,11 @@ export const initialState = {
     memory: 100
 }
 
+const clearDisplay = {
+    state:0
+}
+
+
 const calculateResult = (num1, num2, operation) => {
     switch(operation) {
         case("+"):

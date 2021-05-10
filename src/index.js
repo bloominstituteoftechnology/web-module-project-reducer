@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import actionCreator from './actions/index';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,6 +11,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+export const initialState = {
+  total: 0,
+  operation: "+",
+  memory: 0
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
