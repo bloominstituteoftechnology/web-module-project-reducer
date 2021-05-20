@@ -1,4 +1,4 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CHANGE_MEMORY, CLEAR_DISPLAY } from './../actions';
 
 export const initialState = {
     total: 100,
