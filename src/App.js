@@ -17,17 +17,15 @@ function App() {
     dispatch(applyNumber(number))
   }
 
-  const handleMemory = (e) => {
-    const memoryOp = e.target.value;
-    dispatch(changeMem(memoryOp));
+  const handleMemory = (operator) => {
+    dispatch(changeMem(operator));
   }
 
-  const handleChangeOperator = (e) => {
-    const operator = e.target.value;
+  const handleOperationClick = (operator) => {
     dispatch(changeOp(operator));
   }
 
-  const handleClearDisplay = (e) => {
+  const handleClearDisplay = (operator) => {
     dispatch(clearDisplay());
   }
 
@@ -71,9 +69,9 @@ function App() {
             </div>
 
             <div className="row">
-              {/* <CalcButton onClick={addOperator} value={"+"} /> */}
-              <CalcButton onClick={handleChangeOperator} value={"*"} />
-              <CalcButton onClick={handleChangeOperator} value={"-"} />
+              <CalcButton value={"+"} onClick={()=> handleOperationClick("+")}/>
+              <CalcButton value={"*"} onClick={()=> handleOperationClick("*")}/>
+              <CalcButton value={"-"} onClick={()=> handleOperationClick("-")}/>
             </div>
 
             <div className="row ce_button">

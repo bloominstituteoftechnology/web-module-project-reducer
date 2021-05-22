@@ -20,13 +20,10 @@ export const applyNumber = (number) => {
 export const clearDisplay = () => {
     return ({ type: CLEAR_DISPLAY });
 }
-export const changeMem = () => {
-    return ({ type: CHANGE_MEMORY });
+export const changeMem = (memoryOp) => {
+    return ({ type: CHANGE_MEMORY, payload: memoryOp });
 }
 
 export const changeOp = (operator) => {
     return ({ type: CHANGE_OPERATION, payload: operator });
-}
-export const memoryTotal = () => {
-    return({type: MEMORY_TOTAL})
 }
