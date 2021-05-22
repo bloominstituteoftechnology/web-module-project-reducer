@@ -1,25 +1,24 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState } from './reducers';
-
-import { applyNumber, changeOp, clearDisplay, addMemory } from './actions';
+import TotalDisplay from './components/TotalDisplay';
+import CalcButton from './components/CalcButton';
+import {
+  applyNumber,
+  changeOp,
+  clearDisplay,
+  addMemory,
+  applyMemory,
+  clearMemory
+} from './actions';
 
 import './App.css';
 
-import TotalDisplay from './components/TotalDisplay';
-import CalcButton from './components/CalcButton';
-
 function App() {
-
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
-
+  // console.log(state);
   const handleNumberClick = (number) => {
     dispatch(applyNumber(number))
   }
-
-  // const handleMemory = (operator) => {
-  //   dispatch(changeMem(operator));
-  // }
 
   const handleOperationClick = (operator) => {
     dispatch(changeOp(operator));
@@ -30,13 +29,21 @@ function App() {
   }
 
   const handleMemoryAdd = () => {
-    dispatch(addMemory())
+    dispatch(addMemory());
+  }
+
+  const handleMemoryApply = () => {
+    dispatch(applyMemory());
+  }
+
+  const handleMemoryClear = () => {
+    dispatch(clearMemory());
   }
 
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        {/* <a className="navbar-brand" href="#"><img width="40px" alt="navBrand" src="./Lambda-Logo-Red.png" /> Lambda Reducer Challenge</a> */}
+        <a className="navbar-brand" href="#"><img width="40px" alt="navBrand" src="./Lambda-Logo-Red.png" /> Reducer Challenge</a>
       </nav>
 
       <div className="container row mt-5">
@@ -49,9 +56,9 @@ function App() {
               <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             <div className="row">
-              <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
-              <CalcButton value={"MR"} onClick={handleMemoryAdd}/>
-              <CalcButton value={"MC"} onClick={handleMemoryAdd}/>
+              <CalcButton value={"M+"} onClick={handleMemoryAdd} />
+              <CalcButton value={"MR"} onClick={handleMemoryApply} />
+              <CalcButton value={"MC"} onClick={handleMemoryClear} />
             </div>
 
             <div className="row">
@@ -73,9 +80,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"} onClick={()=> handleOperationClick("+")}/>
-              <CalcButton value={"*"} onClick={()=> handleOperationClick("*")}/>
-              <CalcButton value={"-"} onClick={()=> handleOperationClick("-")}/>
+              <CalcButton value={"+"} onClick={() => handleOperationClick("+")} />
+              <CalcButton value={"*"} onClick={() => handleOperationClick("*")} />
+              <CalcButton value={"-"} onClick={() => handleOperationClick("-")} />
             </div>
 
             <div className="row ce_button">

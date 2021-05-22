@@ -1,9 +1,11 @@
-import { ADD_ONE, 
+import {
+    ADD_ONE,
     APPLY_NUMBER,
     CHANGE_OPERATION,
-    CHANGE_MEMORY,
     CLEAR_DISPLAY,
-    MEMORY_ADD
+    MEMORY_ADD,
+    MEMORY_APPLY,
+    MEMORY_CLEAR
 } from './../actions';
 
 export const initialState = {
@@ -17,15 +19,6 @@ const calculateResult = (num1, num2, operation) => {
         case ("+"): return num1 + num2;
         case ("*"): return num1 * num2;
         case ("-"): return num1 - num2;
-        default: return null
-    }
-}
-
-const calculateMemory = (total, memoryOp) => {
-    switch (memoryOp) {
-        case ("M+"): return total;
-        case ("MC"): return (0);
-        case ("MR"): return undefined;
         default: return null
     }
 }
@@ -50,31 +43,29 @@ const reducer = (state, action) => {
                 operation: action.payload
             });
 
-        case (CHANGE_MEMORY):
-            const memoryOperator = action.payload;
-            if (memoryOperator === "MR") {
-                return ({
-                    ...state,
-                    total: state.memory
-                })
-            }
-            else {
-                return ({
-                    ...state,
-                    memory: calculateMemory(state.total, action.payload)
-                })
-            }
         case (CLEAR_DISPLAY):
             return ({
                 ...state,
                 total: 0
             });
-        
-            case (MEMORY_ADD):
-                return ({
-                    ...state,
-                    memory: state.total
-                });
+
+        case (MEMORY_ADD):
+            return ({
+                ...state,
+                memory: state.total
+            });
+
+        case (MEMORY_APPLY):
+            return ({
+                ...state,
+                total: calculateResult(state.total, state.memory, state.operation)
+            });
+
+        case (MEMORY_CLEAR):
+            return ({
+                ...state,
+                memory: 0
+            });
 
         default:
             return state;
