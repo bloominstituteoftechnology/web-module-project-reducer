@@ -16,7 +16,7 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 ![Calculator Example](project-goals.gif)
 
-***Make sure to complete your tasks one at a time and complete test each task before proceding forward.***
+***Make sure to complete your tasks one at a time and completely test each task before proceding forward.***
 
 ## Instructions
 ### Task 1: Project Set Up
@@ -36,11 +36,11 @@ This simplified calculator adds the entire number selected, rather then adds dig
 * [ ] Use useReducer hook to get access to the application state and the dispatch function.
 
 #### Display our state within the UI.
-> *We now have access to the state within our App component (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen.*
+> *We now have access to the state withing our App components (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen.*
 * [ ] Replace "X" with a reference to `state.operation` within the operation element.
 * [ ] Replace "0" with a reference to `state.memory` within the memory element.
 * [ ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
-* [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, * and 100 respectively)
+* [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, / and 100 respectively)
 * [ ] **Test** that you are connected to state by changing the initialState value in your reducer to:
 ```
 export const initialState = {
@@ -80,22 +80,22 @@ export const initialState = {
 * [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
 * [ ] **Test** that you can successfully change operators and apply numbers in each case.
 
-#### Create and connect a reducer case and action creator.
-> *Now let's add in the clear display feature. For this, you will be doing every part of the reducer / action creator process.*
+#### Create and connect an reducer case and action creator.
+> *Now let's add in the clear display feature. For this, you will be doing every part of the reducer / action process.*
 * [ ] Within `./reducers/index,` add in a case for `CLEAR_DISPLAY`. Clear display should set the total value in state to 0.
 * [ ] Within `./actions/index,` add in an action creator and action string constant to for `CLEAR_DISPLAY`. Make sure to import that constant into your reducer file.
 * [ ] Within `App.js,` import in your clearDisplay action creator.
 * [ ] Create and connect an event handler to the "CE" button that dispatches your clearDisplay action creator.
 * [ ] **Test** that your clearDisplay button works as expected.
 
-#### Add in memory functions from scratch.
-> *Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following app features. IN EACH CASE, ALWAYS TEST THAT YOUR FEATURE WORKS BEFORE PROCEEDING FORWARD.*
+#### Task 8: Add in memory functions from scratch.
+> *Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following button functions. IN EACH CASE, ALWAYS TEST YOU FEATURE WORKS BEFORE PROCEEDING FORWARD.*
 
-* [ ] When `M+` is pressed, the current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
-* [ ] When `MR` is pressed, the current memory value should be applied to the current total value(See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
-* [ ] When `MC` is pressed, the current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
+* [ ] When `M+` is pressed, the state's current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
+* [ ] When `MR` is pressed, the state's current total value should be set to the current total value applied to the current memory value (See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
+* [ ] When `MC` is pressed, the state's current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
 ### Task 3: Stretch goals
-- [ ] There is a version of the calculator focuses on adding individual digits, rather then entire numbers. How do you imagine adding an individual digit to the total state?
+- [ ] There is a version of the calculator focuses on adding individual digits, rather then entire numbers. How do you imagine add an individual digit to a the total state?
 - [ ] [Here is an example](https://freshman.tech/calculator/) of a (non-reducer) approach to building an javascript calculator. Feel free to make a new branch and use the basic ideas in the post to build a new version of the calculator.
