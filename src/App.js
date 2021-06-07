@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 import reducer, {initialState} from './reducers/index';
 import {
   applyNumber,
-  applyOperation,
+  changeOperation,
   clearDisplay,
   applyMemory,
   setMemory,
@@ -19,7 +19,7 @@ function App() {
   const [state, dispatch] = useReducer( reducer, initialState );
 
   const handleApplyNumber = number => {dispatch(applyNumber(number))};
-  const handleApplyOperation = operation => {dispatch(applyOperation(operation))};
+  const handleApplyOperation = operator => {dispatch(changeOperation(operator))};
   const handleClearDisplay = () => {dispatch(clearDisplay())};
   const handleSetMemory = () => {dispatch(setMemory())};
   const handleApplyMemory = () => {dispatch(applyMemory())};
@@ -68,7 +68,7 @@ function App() {
             <div className="row">
               <CalcButton value={"+"} onclick= {() => handleApplyOperation('+')}/>
               <CalcButton value={"*"} onclick= {() => handleApplyOperation('*')}/>
-              <CalcButton value={"-" }onclick= {() => handleApplyOperation('-')}/>
+              <CalcButton value={"-"} onclick= {() => handleApplyOperation('-')}/>
             </div>
 
             <div className="row ce_button">

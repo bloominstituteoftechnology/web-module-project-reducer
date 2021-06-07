@@ -8,7 +8,7 @@ import { ADD_ONE,
 
 export const initialState = {
     total: 0,
-    operation: "+",
+    operation: "-",
     memory: 0
 }
 
