@@ -12,7 +12,7 @@ export const addOne = () => {
     return({type:ADD_ONE});
 }
 
-export const changeOperation (operation) => {
+export const applyOperation = ( operation) => {
     return({type: CHANGE_OPERATION, payload: operation});
 }
 
