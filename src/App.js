@@ -7,6 +7,7 @@ import {
   applyMemory,
   setMemory,
   clearMemory,
+  addOne,
 } from './actions/index';
 import './App.css';
 
@@ -47,7 +48,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={() => handleApplyNumber(1)}/>
+              <CalcButton value={1} onClick={() => handleApplyNumber(1)} onclick={() => addOne()}/>
               <CalcButton value={2} onClick={() => handleApplyNumber(2)}/>
               <CalcButton value={3} onClick={() => handleApplyNumber(3)}/>
             </div>
@@ -71,7 +72,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"} onclick={() => handleClearDisplay()}/>
+              <CalcButton value={"CE"} onclick={() => handleClearDisplay}/>
             </div>
 
           </form>
