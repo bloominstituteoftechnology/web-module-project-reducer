@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useReducer} from 'react';
+import reducer, {initialState} from './reducers/index';
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
