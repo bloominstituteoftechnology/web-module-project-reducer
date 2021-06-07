@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState } from './reducers';
-import { addOne } from './actions';
+import { addOne, applyNumber } from './actions';
 
 import './App.css';
 
@@ -16,9 +16,53 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   // console.log(state);
 
-  const handleOneClick = () => {
-    // console.log("connected");
-    dispatch(addOne());
+  // const handleOneClick = () => {
+  //   // console.log("connected");
+  //   dispatch(addOne());
+  // };
+
+  const handleClick = (value) => {
+    // number = handleClick.value;
+    dispatch({type: 'Apply_Number', payload: value});
+    // dispatch(applyNumber(value));
+    // dispatch(applyNumber(2));
+
+  };
+
+  const handleClickOne = () => {
+    dispatch(applyNumber(1));
+  };
+
+  const handleClickTwo = () => {
+    dispatch(applyNumber(2));
+  };
+
+  const handleClickThree = () => {
+    dispatch(applyNumber(3));
+  };
+
+  const handleClickFour = () => {
+    dispatch(applyNumber(4));
+  };
+
+  const handleClickFive = () => {
+    dispatch(applyNumber(5));
+  };
+
+  const handleClickSix = () => {
+    dispatch(applyNumber(6));
+  };
+
+  const handleClickSeven = () => {
+    dispatch(applyNumber(7));
+  };
+
+  const handleClickEight = () => {
+    dispatch(applyNumber(8));
+  };
+
+  const handleClickNine = () => {
+    dispatch(applyNumber(9));
   };
 
   return (
@@ -44,21 +88,21 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton onClick={handleOneClick} value={1}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton onClick={handleClickOne} value={1}/>
+              <CalcButton onClick={handleClickTwo} value={2}/>
+              <CalcButton onClick={handleClickThree} value={3}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton onClick={handleClickFour} value={4}/>
+              <CalcButton onClick={handleClickFive} value={5}/>
+              <CalcButton onClick={handleClickSix} value={6}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton onClick={handleClickSeven} value={7}/>
+              <CalcButton onClick={handleClickEight} value={8}/>
+              <CalcButton onClick={handleClickNine} value={9}/>
             </div>
 
             <div className="row">
