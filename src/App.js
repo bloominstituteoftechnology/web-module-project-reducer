@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useReducer } from 'react';
+import reducer, { initialState } from './reducers';
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
+// const useAppState = () => {
+//   const [state, dispatch] = useReducer(reducer, initialState);
+// };
+
 function App() {
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+  // console.log(state);
 
   return (
     <div className="App">
