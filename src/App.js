@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import reducer, { initialState } from "./reducers/index";
-import { addOne } from "./actions/index";
+import { addOne, applyNumber } from "./actions/index";
 
 import "./App.css";
 
@@ -11,8 +11,12 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);
 
-  const handleAddClick = () => {
-    dispatch(addOne());
+  // const handleAddClick = () => {
+  //   dispatch(addOne());
+  // };
+
+  const handleApplyNumberClick = (argument) => {
+    dispatch(applyNumber(argument));
   };
 
   return (
@@ -43,7 +47,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={handleAddClick} />
+              <CalcButton value={1} onClick={() => handleApplyNumberClick(1)} />
               <CalcButton value={2} />
               <CalcButton value={3} />
             </div>
