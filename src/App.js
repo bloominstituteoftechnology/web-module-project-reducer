@@ -4,6 +4,10 @@ import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
+import { reducer, initialState} from './reducers/index'
+
+
+const [state, dispatch] = useReducer(reducer, initialState)
 
 
 function App() {
