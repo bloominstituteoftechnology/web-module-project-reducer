@@ -1,12 +1,20 @@
 import React, { useReducer }  from 'react';
-import reducer from './reducers'
+import reducer, { initialState } from './reducers'
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
+
+
+
 function App() {
+
+
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+
 
   return (
     <div className="App">
@@ -20,7 +28,7 @@ function App() {
             
             <TotalDisplay value={0}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
+              <span id="operation"><b>Operation:</b> state.operation </span>
               <span id="memory"><b>Memory:</b> 0</span>
             </div>
             
