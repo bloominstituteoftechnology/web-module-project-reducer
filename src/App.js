@@ -5,7 +5,7 @@ import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { applyNumber } from './actions';
+import { applyNumber, changeOperation } from './actions';
 
 
 
@@ -41,7 +41,7 @@ function App() {
 
             <div className="row">
               <CalcButton onClick= {() => dispatch({ type: "ADD_ONE" })}value={1}/>
-              <CalcButton onClick= {() => dispatch({ type: applyNumber (2) })}value={2}/>
+              <CalcButton onClick= {() => dispatch(applyNumber (2) )}value={2}/>
               <CalcButton value={3}/>
             </div>
 
@@ -58,9 +58,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton onClick= {() => dispatch(changeOperation ("+") )}value={"+"}/>
+              <CalcButton onClick= {() => dispatch(changeOperation ("*") )}value={"*"}/>
+              <CalcButton onClick= {() => dispatch(changeOperation ("-") )}value={"-"}/>
             </div>
 
             <div className="row ce_button">
