@@ -5,6 +5,8 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
+//Testing commit
+
 function App() {
 
   return (
