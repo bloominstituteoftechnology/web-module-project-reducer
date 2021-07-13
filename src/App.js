@@ -28,6 +28,17 @@ function App() {
     dispatch(changeOperation(e))
   }
 
+  const clearClick = () => {
+    dispatch(clear())
+  }
+
+  const clearMemClick = () => {
+    dispatch(clearMemory())
+  }
+
+  const addMemClick = () => {
+    dispatch(addToMemory())
+  }
 
   return (
     <div className="App">
@@ -46,9 +57,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={addMemClick}/>
+              <CalcButton value={"MR"} onClick={() => handleChanges(state.memory)}/>
+              <CalcButton value={"MC"} onClick={clearMemClick}/>
             </div>
 
             <div className="row">
