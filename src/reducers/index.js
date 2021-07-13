@@ -6,7 +6,7 @@ export const initialState = {
     memory: 100
 }
 
-const calculateResult = (num1, num2, operation) => {
+export const calculateResult = (num1, num2, operation) => {
     switch(operation) {
         case("+"):
             return num1 + num2;
