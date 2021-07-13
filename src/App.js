@@ -24,6 +24,10 @@ function App() {
     console.log(state.operation)
   }
 
+  const handleOperation = (e) => {
+    dispatch(changeOperation(e))
+  }
+
 
   return (
     <div className="App">
@@ -66,9 +70,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={() => handleOperation('+')}/>
+              <CalcButton value={"*"} onClick={() => handleOperation('*')}/>
+              <CalcButton value={"-"} onClick={() => handleOperation('-')}/>
             </div>
 
             <div className="row ce_button">
