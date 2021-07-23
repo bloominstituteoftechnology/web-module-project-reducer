@@ -5,7 +5,15 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 import reducer, { initialState } from './reducers/index'
-import { addOne, applyNumber, changeOperation, clearDisplay } from './actions/index'
+import {
+  addOne,
+  addToMemory,
+  applyNumber,
+  changeOperation,
+  clearDisplay,
+  clearMemory,
+  recallFromMemory
+} from './actions/index'
 
 
 
@@ -30,9 +38,20 @@ function App() {
 
   const handleOperator = operator => {
     dispatch(changeOperation(operator.target.innerText))
-    console.log(operator.target.innerText);
+    // console.log(operator.target.innerText);
   }
 
+  const addToMemoryClick = () => {
+    dispatch(addToMemory())
+  }
+
+  const recallFromMemoryClick = () => {
+    dispatch(recallFromMemory())
+  }
+
+  const clearMemoryClick = () => {
+    dispatch(clearMemory())
+  }
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -50,9 +69,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton onClick={addToMemoryClick} value={"M+"} />
+              <CalcButton onClick={recallFromMemoryClick} value={"MR"} />
+              <CalcButton onClick={clearMemoryClick} value={"MC"} />
             </div>
 
             <div className="row">
