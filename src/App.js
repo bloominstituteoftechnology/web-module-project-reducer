@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useReducer} from 'react';
+import reducer, { initialState } from './reducers';
 
 import './App.css';
 
@@ -6,6 +7,9 @@ import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
 function App() {
+  console.log(initialState);
+  const [state, dispatch ] = useReducer(reducer, initialState);
+  console.log(state);
 
   return (
     <div className="App">
@@ -19,8 +23,8 @@ function App() {
             
             <TotalDisplay value={0}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation:</b> {state.operation}</span>
+              <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             
             <div className="row">
