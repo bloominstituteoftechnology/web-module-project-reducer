@@ -1,13 +1,26 @@
-
+/**
+ * Tom Bielawski
+ * Lambda School WEB45 Reducer Pattern
+ * 3.2.1
+ * 8/9/2021
+ */
 //Imports
 import React, {useReducer} from 'react';
 import './App.css';
 import reducer, {initialState} from "./reducers/index"
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_PLUS, MEMORY_R, MEMORY_C } from './actions';
+import 
+{ 
+  // ADD_ONE, 
+  APPLY_NUMBER, 
+  CHANGE_OPERATION, 
+  CLEAR_DISPLAY, 
+  MEMORY_PLUS, 
+  MEMORY_R, 
+  MEMORY_C } from './actions';
 
-
+//Main function
 function App() 
 {
   //Initial state, useReducer init to reducer() and initialState
@@ -39,21 +52,27 @@ function App()
     dispatch({type: CHANGE_OPERATION , payload: operator});
   }
 
+  //Function to clear the display
   const clearDisplayClick = () =>
   {
+    //Call dispatch, pass in CLEAR_DISPLAY
     dispatch({type: CLEAR_DISPLAY});
   }
 
+  //Function to assign total to memory
   const memoryPlusClick= () =>
   {
+    //Call dispatch, pass in  MEMORY_PLUS
     dispatch({type: MEMORY_PLUS});
   }
 
+  //Function to add memory to total
   const memoryR= () =>
   {
     dispatch({type: MEMORY_R});
   }
 
+  //Function to clear memory
   const memoryC= () =>
   {
     dispatch({type: MEMORY_C});

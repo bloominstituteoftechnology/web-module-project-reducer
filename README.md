@@ -33,7 +33,7 @@ This simplified calculator adds the entire number selected, rather then adds dig
 * [x] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
 * [x] Note that the `CalcButton` component takes in an `onClick` method and a value, displays that value and attaches the passed `onClick` method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
 * [x] Within App.js, import the useReducer hook, our application's reducer and initialState object.
-* [ ] Use useReducer hook to get access to the application state and the dispatch function.
+* [x] Use useReducer hook to get access to the application state and the dispatch function.
 
 #### Display our state within the UI.
 > *We now have access to the state within our App component (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen.*

@@ -1,5 +1,14 @@
+/**
+ * Tom Bielawski
+ * Lambda School WEB45 Reducer Pattern
+ * 3.2.1
+ * 8/9/2021
+ **/
+
+//Imports
 import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_PLUS, MEMORY_R, MEMORY_C} from './../actions';
 
+//Initial state
 export const initialState = 
 {
     
@@ -8,6 +17,7 @@ export const initialState =
     memory: 0
 }
 
+//Calculate results
 const calculateResult = (num1, num2, operation) => 
 {
     switch(operation) 
