@@ -5,7 +5,7 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 import reducer, {initialState} from "./reducers";
-import { addOne, applyNumber, changeOperation, clearDisplay } from "./actions";
+import { addOne, applyNumber, changeOperation, clearDisplay, addMemory, applyMemory, clearMemory } from "./actions";
 
 function App() {
 
@@ -21,11 +21,23 @@ function App() {
 
   const handleChangeOperator = (operator) => {
     dispatch(changeOperation(operator))
-  }
+  };
 
   const handleClear = () => {
     dispatch(clearDisplay())
-  }
+  };
+
+  const handleAddMemory = () => {
+    dispatch(addMemory())
+  };
+
+  const handleApplyMemory = () => {
+    dispatch(applyMemory())
+  };
+
+  const handleClearMemory = () => {
+    dispatch(clearMemory())
+  };
 
   return (
     <div className="App">
@@ -44,9 +56,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={handleAddMemory}/>
+              <CalcButton value={"MR"} onClick={handleApplyMemory}/>
+              <CalcButton value={"MC"} onClick={handleClearMemory}/>
             </div>
 
             <div className="row">
