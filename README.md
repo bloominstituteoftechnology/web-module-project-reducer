@@ -10,7 +10,7 @@ This module explored the reducer pattern. During the module, you studied what im
 - Learn how to step through and test thoroughly each step of the process.
 
 ## Introduction
-In this project, you will build an complete a simple calculator app that can add, multiply, subtract and clear numbers in any order as well as add in memory save and recall features. You will start by adding in missing pieces to the code and complete the process by building features in to the UI, reducer and actions files from scratch.
+In this project, you will build an complete a simple calculator app that can add, multiply, subtract and clear numbers in any order as well as add in memory save and recall features. You will start by adding in missing pieces to the code and complete the process by building features into the UI, reducer and actions files from scratch.
 
 This simplified calculator adds the entire number selected, rather then adds digits into end of number. In the end of the process, your calculator should function as follows:
 
@@ -20,28 +20,28 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 ## Instructions
 ### Task 1: Project Set Up
-* [ ] Create a forked copy of this project.
-* [ ] Clone your OWN version of the repository in your terminal
-* [ ] cd into the project base directory `cd web-module-project-reducer-pattern`
-* [ ] Download project dependencies by running `npm install`
-* [ ] Start up the app using `npm start`
+* [x] Create a forked copy of this project.
+* [x] Clone your OWN version of the repository in your terminal
+* [x] cd into the project base directory `cd web-module-project-reducer-pattern`
+* [x] Download project dependencies by running `npm install`
+* [x] Start up the app using `npm start`
 
 ### Task 2: Project Requirements
 #### Connect The Reducer
 > *Let's start our process by connecting our UI to our reducer and initial state.*
-* [ ] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
-* [ ] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
-* [ ] Note that the `CalcButton` component takes in an `onClick` method and a value, displays that value and attaches the passed `onClick` method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
-* [ ] Within App.js, import the useReducer hook, our application's reducer and initialState object.
+* [x] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
+* [x] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+* [x] Note that the `CalcButton` component takes in an `onClick` method and a value, displays that value and attaches the passed `onClick` method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+* [x] Within App.js, import the useReducer hook, our application's reducer and initialState object.
 * [ ] Use useReducer hook to get access to the application state and the dispatch function.
 
 #### Display our state within the UI.
 > *We now have access to the state within our App component (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen.*
-* [ ] Replace "X" with a reference to `state.operation` within the operation element.
-* [ ] Replace "0" with a reference to `state.memory` within the memory element.
-* [ ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
-* [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, * and 100 respectively)
-* [ ] **Test** that you are connected to state by changing the initialState value in your reducer to:
+* [x] Replace "X" with a reference to `state.operation` within the operation element.
+* [x] Replace "0" with a reference to `state.memory` within the memory element.
+* [x] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
+* [x] Check to see that your total, operation and memory display in the UI match your initialState (100, * and 100 respectively)
+* [x] **Test** that you are connected to state by changing the initialState value in your reducer to:
 ```
 export const initialState = {
     total: 0,
@@ -49,23 +49,23 @@ export const initialState = {
     memory: 0
 }
 ```
-* [ ] Check to see that your display correctly reflects the change to your state.
+* [x] Check to see that your display correctly reflects the change to your state.
 
 #### Connect a premade action.
 > *Now that we can see our state, let's change allow the user to change it. Let's start with a simple premade action...adding one to our total.*
-* [ ] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
-* [ ] Import the `addOne` action creator into App.js.
-* [ ] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
-* [ ] Within your event handler, dispatch the `addOne` action creator.
+* [x] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
+* [x] Import the `addOne` action creator into App.js.
+* [x] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
+* [x] Within your event handler, dispatch the `addOne` action creator.
 * [ ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
 * [ ] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
 
 
 #### Connect a better premade action.
-> *Adding indivisual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
-* [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
-* [ ] Import the `applyNumber` action creator into `App.js.`
-* [ ] Remove or comment out the `addOne` event handler from the 1 button.
+> *Adding individual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
+* [x] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
+* [x] Import the `applyNumber` action creator into `App.js.`
+* [x] Remove or comment out the `addOne` event handler from the 1 button.
 * [ ] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
 * [ ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
 * [ ] **Test** that clicking the one button still adds one to the total display on the browser.
