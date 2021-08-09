@@ -25,7 +25,7 @@ function App() {
     dispatch(setMemoryVal())
   }
   const grabMemory=(num)=>{
-    dispatch(grabMemoryVal(num.toString))
+    dispatch(grabMemoryVal(num))
   }
   const memoryCleared=()=>{
     dispatch(clearMemory())

@@ -3,14 +3,14 @@ import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_VALUE, M
 export const initialState = {
     total: "",
     operation: "+",
-    memory: "",
+    memory: "0",
     num1:"",
 }
 
 const calculateResult = (num1, num2, operation) => {
     switch(operation) {
         case("+"):
-            return num1 + num2;
+            return parseInt(num1) + parseInt(num2);
         case("*"):
             return num1 * num2;
         case("-"):
