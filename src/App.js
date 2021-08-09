@@ -20,8 +20,9 @@ function App() {
     dispatch(applyNumber(number));
   }
 
-  const handeChangeOperation = (operator) => {
-    dispatch(changeOperation(operator))
+  const handleOperationClick = (operator) => {
+      // console.log('Handle operation click');
+      dispatch(changeOperation(operator));
   }
 
   return (
@@ -66,9 +67,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"} onclick={handeChangeOperation('+')} />
-              <CalcButton value={"*"} onclick={handeChangeOperation('*')} />
-              <CalcButton value={"-"} onclick={handeChangeOperation('-')} />
+              <CalcButton value={"+"} onClick={()=> {handleOperationClick("+")}} />
+              <CalcButton value={"*"} onClick={()=> {handleOperationClick("*")}} />
+              <CalcButton value={"-"} onClick={()=> {handleOperationClick("-")}} />
             </div>
 
             <div className="row ce_button">
