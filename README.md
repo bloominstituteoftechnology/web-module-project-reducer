@@ -62,7 +62,7 @@ export const initialState = {
 
 
 #### Connect a better premade action.
-> *Adding indivisual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
+> *Adding individual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
 * [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
 * [ ] Import the `applyNumber` action creator into `App.js.`
 * [ ] Remove or comment out the `addOne` event handler from the 1 button.
