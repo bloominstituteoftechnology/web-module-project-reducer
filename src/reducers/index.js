@@ -1,8 +1,8 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './../actions';
 
 export const initialState = 
 {
-    hello: "howdy",
+    
     total: 0,
     operation: "+",
     memory: 0
@@ -24,7 +24,8 @@ const calculateResult = (num1, num2, operation) =>
 
 const reducer = (state, action) => 
 {
-    switch(action.type) {
+    switch(action.type) 
+    {
         case(ADD_ONE):
             return({
                 ...state,
@@ -42,6 +43,10 @@ const reducer = (state, action) =>
                 ...state,
                 operation: action.payload
             });
+
+        case(CLEAR_DISPLAY):
+            return ({...state, total:0 });
+            
             
         default:
             return state;

@@ -5,7 +5,7 @@ import './App.css';
 import reducer, {initialState} from "./reducers/index"
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { ADD_ONE, applyNumber,CHANGE_OPERATION } from './actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './actions';
 
 
 function App() 
@@ -18,11 +18,30 @@ function App()
   //Handler functions
 
   //Add One handler
-  const addOneClick = (numnum) =>
+  // const addOneClick = (numOne) =>
+  // {
+  //   //Call dispatch function, pass ADD_ONE from Reducers/Index and parameter to hold number
+  //   dispatch({type: ADD_ONE, payload: numOne}); 
+  //   console.log(">>>>>NUM1", initialState, "<<<<");
+  // }
+
+  //ApplyNumberClick handler (), pass a parameter to hold a number
+  const applyNumberClick = (someNumber) =>
   {
-    //Call dispatch function, pass addOne from Reducers/Index
-    dispatch({type: ADD_ONE, payload: numnum}); 
-    console.log(">>>>>NUM1", initialState, "<<<<");
+    //call dispatch function, pass APPLY_NUMBER from reducers/index and parameter to hold number
+    dispatch({type: APPLY_NUMBER, payload: someNumber});
+  }
+
+  //Function to change operations
+  const changeOperationsClick = (operator) =>
+  {
+    //call dispatch function, pass CHANGE_OPERATION from reducers/index and parameter to hold number
+    dispatch({type: CHANGE_OPERATION , payload: operator});
+  }
+
+  const clearDisplayClick = () =>
+  {
+    dispatch({type: CLEAR_DISPLAY});
   }
 
 
@@ -50,31 +69,34 @@ function App()
 
             <div className="row">
               {/* Apply the addOneClick to onClick  */}
-              <CalcButton onClick = {addOneClick} value={1}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              {/* <CalcButton onClick = {addOneClick} value={1}/> */}
+              {/* Apply the applyNumberClick to onClick, pass in (1)  */}
+              <CalcButton onClick = {() => applyNumberClick(1)} value={1}/>
+              <CalcButton onClick = {() => applyNumberClick(2)} value={2}/>
+              <CalcButton onClick = {() => applyNumberClick(3)} value={3}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton onClick = {() => applyNumberClick(4)} value={4}/>
+              <CalcButton onClick = {() => applyNumberClick(5)} value={5}/>
+              <CalcButton onClick = {() => applyNumberClick(6)} value={6}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton onClick = {() => applyNumberClick(7)} value={7}/>
+              <CalcButton onClick = {() => applyNumberClick(8)} value={8}/>
+              <CalcButton onClick = {() => applyNumberClick(9)} value={9}/>
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton onClick = {() =>  changeOperationsClick("+")} value={"+"}/>
+              <CalcButton onClick = {() =>  changeOperationsClick("*")} value={"*"}/>
+              <CalcButton onClick = {() =>  changeOperationsClick("-")} value={"-"}/>
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              {/* call ClearDisplayClick with null as argument  */}
+              <CalcButton onClick = {() =>  clearDisplayClick(null)}value={"CE"}/>
             </div>
 
           </form>
