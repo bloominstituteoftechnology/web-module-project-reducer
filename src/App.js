@@ -5,7 +5,7 @@ import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { applyNumber, changeOperation, clearDisplay } from '../src/actions/index';
+import { addMemory, applyNumber, changeOperation, clearDisplay } from '../src/actions/index';
 
 function App() {
   // console.log(initialState);
@@ -29,6 +29,10 @@ function App() {
     dispatch(clearDisplay());
   }
 
+  const handleAddMemroy = () => {
+    dispatch(addMemory())
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -46,7 +50,7 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
+              <CalcButton value={"M+"} onClick={()=> {handleAddMemroy()}}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
