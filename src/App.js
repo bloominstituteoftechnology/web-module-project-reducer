@@ -1,25 +1,29 @@
-import React, { useState, useReducer} from 'react';
+import React, { useReducer} from 'react';
 import reducer, { initialState } from './reducers';
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import {addOne} from '../src/actions/index';
+import { applyNumber, addOne } from '../src/actions/index';
 
 function App() {
   console.log(initialState);
   const [state, dispatch ] = useReducer(reducer, initialState);
   console.log(state);
 
-  const handleAddOneChange = e => {
+  const handleAddOneClick = e => {
     dispatch(addOne());
   }
+
+  // const handleNumberClick = (number) => {
+  //   dispatch(applyNumber(number));
+  // }
 
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#"><img width="40px" src="./Lambda-Logo-Red.png"/> Lambda Reducer Challenge</a>
+        <a className="navbar-brand" href="#"><img width="40px" src="./Lambda-Logo-Red.png" alt=''/> Lambda Reducer Challenge</a>
       </nav>
 
       <div className = "container row mt-5">
@@ -39,7 +43,8 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={handleAddOneChange}/>
+              <CalcButton value={1} onClick={handleAddOneClick}/>
+              {/* <CalcButton value={1} onClick={()=> handleNumberClick(1)}/> */}
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
