@@ -3,19 +3,10 @@ import './App.css';
 import reducer, {initialState} from "./reducers/index"
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY} from './actions';
+import {APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY,MEMORY_PLUS,MR_BUTTON,MR_BUTTON_RESET} from './actions';
 function App() {
   const[state, dispatch] = useReducer(reducer, initialState);
-  
-
-  //Handler functions
-
-  // Add One handler
-  // const addOneClick = (int) =>
-  // {
-  //   //Call dispatch function, pass addOne from Reducers/Index
-  //   dispatch({type:ADD_ONE, payload:int});
-  // }
+ 
   const applyNumber = (int) => {
     dispatch({type:APPLY_NUMBER, payload:int})
   }
@@ -28,6 +19,16 @@ function App() {
     dispatch({type:CLEAR_DISPLAY})
   }
 
+  const memoryPlus = () => {
+    dispatch({type:MEMORY_PLUS})
+  }
+
+  const mrButton = () => {
+    dispatch({type:MR_BUTTON})
+  }
+const mrButtonReset = () => {
+  dispatch({type:MR_BUTTON_RESET})
+}
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -45,9 +46,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick = {() => memoryPlus()}value={"M+"}/>
+              <CalcButton onClick= {() => mrButton()} value={"MR"}/>
+              <CalcButton  onClick= {() => mrButtonReset()}value={"MC"}/>
             </div>
 
             <div className="row">
