@@ -3,31 +3,32 @@ import './App.css';
 import reducer, {initialState} from "./reducers/index"
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import {APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY,MEMORY_PLUS,MR_BUTTON,MR_BUTTON_RESET} from './actions';
+import {applyNumber,changeOperation,deleteDaddy,memoryAdd,memoryToTotal,mrReset} from "./actions"
+
 function App() {
   const[state, dispatch] = useReducer(reducer, initialState);
  
-  const applyNumber = (int) => {
-    dispatch({type:APPLY_NUMBER, payload:int})
+  const applyNumber1 = (int) => {
+    dispatch(applyNumber(int))
   }
 
-  const changeDaddy = (int) => {
-    dispatch({type:CHANGE_OPERATION, payload: int})
+  const changeDaddy1 = (int) => {
+    dispatch(changeOperation(int))
   }
 
-  const resetDisplay = () => {
-    dispatch({type:CLEAR_DISPLAY})
+  const resetDisplay1 = (int) => {
+    dispatch(deleteDaddy(int))
   }
 
-  const memoryPlus = () => {
-    dispatch({type:MEMORY_PLUS})
+  const memoryPlus1 = (int) => {
+    dispatch(memoryAdd(int))
   }
 
-  const mrButton = () => {
-    dispatch({type:MR_BUTTON})
+  const mrButton1 = (int) => {
+    dispatch(memoryToTotal(int))
   }
-const mrButtonReset = () => {
-  dispatch({type:MR_BUTTON_RESET})
+const mrButtonReset1 = (int) => {
+  dispatch(mrReset(int))
 }
   return (
     <div className="App">
@@ -46,38 +47,38 @@ const mrButtonReset = () => {
             </div>
             
             <div className="row">
-              <CalcButton onClick = {() => memoryPlus()}value={"M+"}/>
-              <CalcButton onClick= {() => mrButton()} value={"MR"}/>
-              <CalcButton  onClick= {() => mrButtonReset()}value={"MC"}/>
+              <CalcButton onClick = {() => memoryPlus1()}value={"M+"}/>
+              <CalcButton onClick= {() => mrButton1()} value={"MR"}/>
+              <CalcButton  onClick= {() => mrButtonReset1()}value={"MC"}/>
             </div>
 
             <div className="row">
-              <CalcButton onClick = {() => applyNumber(1)} value={1}/>
+              <CalcButton onClick = {() => applyNumber1(1)} value={1}/>
 
-              <CalcButton onClick = {() => applyNumber(2)} value={2}/>
-              <CalcButton onClick = {() => applyNumber(3)} value={3}/>
+              <CalcButton onClick = {() => applyNumber1(2)} value={2}/>
+              <CalcButton onClick = {() => applyNumber1(3)} value={3}/>
             </div>
 
             <div className="row">
-            <CalcButton onClick = {() => applyNumber(4)} value={4}/>
-            <CalcButton onClick = {() => applyNumber(5)} value={5}/>
-            <CalcButton onClick = {() => applyNumber(6)} value={6}/>
+            <CalcButton onClick = {() => applyNumber1(4)} value={4}/>
+            <CalcButton onClick = {() => applyNumber1(5)} value={5}/>
+            <CalcButton onClick = {() => applyNumber1(6)} value={6}/>
             </div>
 
             <div className="row">
-            <CalcButton onClick = {() => applyNumber(7)} value={7}/>
-            <CalcButton onClick = {() => applyNumber(8)} value={8}/>
-            <CalcButton onClick = {() => applyNumber(9)} value={9}/>
+            <CalcButton onClick = {() => applyNumber1(7)} value={7}/>
+            <CalcButton onClick = {() => applyNumber1(8)} value={8}/>
+            <CalcButton onClick = {() => applyNumber1(9)} value={9}/>
             </div>
 
             <div className="row">
-              <CalcButton onClick = {() => changeDaddy("+")} value={"+"}/>
-              <CalcButton onClick = {() => changeDaddy("*")} value={"*"}/>
-              <CalcButton onClick = {() => changeDaddy("-")} value={"-"}/>
+              <CalcButton onClick = {() => changeDaddy1("+")} value={"+"}/>
+              <CalcButton onClick = {() => changeDaddy1("*")} value={"*"}/>
+              <CalcButton onClick = {() => changeDaddy1("-")} value={"-"}/>
             </div>
 
             <div className="row ce_button">
-             <CalcButton onClick = {() => resetDisplay(null)} value={"CE"}/>
+             <CalcButton onClick = {() => resetDisplay1(null)} value={"CE"}/>
             </div>
 
           </form>
