@@ -6,6 +6,7 @@ export const CLEAR_DISPLAY = "CLEAR"
 export const MEMORY_VALUE ="MEMORY_VALUE"
 export const MEMORY_GRABBED = "MEMORY_GRABBED"
 export const MEMORY_CLEARED = "MEMORY_CLEARED"
+export const ENTERED_NUMBER = "ENTERED_NUMBER"
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -29,4 +30,7 @@ export const grabMemoryVal=()=>{
 }
 export const clearMemory=()=>{
     return({type: MEMORY_CLEARED})
+}
+export const enterNumber=()=>{
+    return({type: ENTERED_NUMBER })
 }
