@@ -8,7 +8,7 @@ import CalcButton from './components/CalcButton';
 import { applyNumber } from '../src/actions/index';
 
 function App() {
-  console.log(initialState);
+  // console.log(initialState);
   const [state, dispatch ] = useReducer(reducer, initialState);
   console.log(state);
 
@@ -50,15 +50,15 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={()=> {handleNumberClick(4)}}/>
+              <CalcButton value={5} onClick={()=> {handleNumberClick(5)}}/>
+              <CalcButton value={6} onClick={()=> {handleNumberClick(6)}}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={()=> {handleNumberClick(7)}}/>
+              <CalcButton value={8} onClick={()=> {handleNumberClick(8)}}/>
+              <CalcButton value={9} onClick={()=> {handleNumberClick(9)}}/>
             </div>
 
             <div className="row">
