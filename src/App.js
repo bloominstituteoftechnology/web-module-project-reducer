@@ -6,29 +6,16 @@ import CalcButton from './components/CalcButton';
 import {applyNumber,changeOperation,deleteDaddy,memoryAdd,memoryToTotal,mrReset} from "./actions"
 
 function App() {
-  const[state, dispatch] = useReducer(reducer, initialState);
- 
-  const applyNumber1 = (int) => {
-    dispatch(applyNumber(int))
-  }
-
-  const changeDaddy1 = (int) => {
-    dispatch(changeOperation(int))
-  }
-
-  const resetDisplay1 = (int) => {
-    dispatch(deleteDaddy(int))
-  }
-
-  const memoryPlus1 = (int) => {
-    dispatch(memoryAdd(int))
-  }
-
-  const mrButton1 = (int) => {
-    dispatch(memoryToTotal(int))
-  }
-const mrButtonReset1 = (int) => {
-  dispatch(mrReset(int))
+//setting state
+const[state, dispatch] = useReducer(reducer, initialState);
+//handlers
+const applyNumber1 = int => {dispatch(applyNumber(int))}
+const changeDaddy1 = int => {dispatch(changeOperation(int))}
+const resetDisplay1 = () => {dispatch(deleteDaddy())}
+const memoryPlus1 = () => {dispatch(memoryAdd())}
+const mrButton1 = () => {dispatch(memoryToTotal())}
+const mrButtonReset1 = () => {dispatch(mrReset())
+  
 }
   return (
     <div className="App">
