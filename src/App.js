@@ -1,11 +1,83 @@
-import React from 'react';
-
+/**
+ * Tom Bielawski
+ * Lambda School WEB45 Reducer Pattern
+ * 3.2.1
+ * 8/9/2021
+ */
+//Imports
+import React, {useReducer} from 'react';
 import './App.css';
-
+import reducer, {initialState} from "./reducers/index"
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
+import 
+{ 
+  // ADD_ONE, 
+  APPLY_NUMBER, 
+  CHANGE_OPERATION, 
+  CLEAR_DISPLAY, 
+  MEMORY_PLUS, 
+  MEMORY_R, 
+  MEMORY_C } from './actions';
 
-function App() {
+//Main function
+function App() 
+{
+  //Initial state, useReducer init to reducer() and initialState
+  const[state, dispatch] = useReducer(reducer, initialState);
+
+  console.log(">>>>>", initialState, "<<<<");
+  console.log(">>>", state, "<<<");
+  //Handler functions
+
+  //Add One handler
+  // const addOneClick = (numOne) =>
+  // {
+  //   //Call dispatch function, pass ADD_ONE from Reducers/Index and parameter to hold number
+  //   dispatch({type: ADD_ONE, payload: numOne}); 
+  //   console.log(">>>>>NUM1", initialState, "<<<<");
+  // }
+
+  //ApplyNumberClick handler (), pass a parameter to hold a number
+  const applyNumberClick = (someNumber) =>
+  {
+    //call dispatch function, pass APPLY_NUMBER from reducers/index and parameter to hold number
+    dispatch({type: APPLY_NUMBER, payload: someNumber});
+  }
+
+  //Function to change operations
+  const changeOperationsClick = (operator) =>
+  {
+    //call dispatch function, pass CHANGE_OPERATION from reducers/index and parameter to hold number
+    dispatch({type: CHANGE_OPERATION , payload: operator});
+  }
+
+  //Function to clear the display
+  const clearDisplayClick = () =>
+  {
+    //Call dispatch, pass in CLEAR_DISPLAY
+    dispatch({type: CLEAR_DISPLAY});
+  }
+
+  //Function to assign total to memory
+  const memoryPlusClick= () =>
+  {
+    //Call dispatch, pass in  MEMORY_PLUS
+    dispatch({type: MEMORY_PLUS});
+  }
+
+  //Function to add memory to total
+  const memoryR= () =>
+  {
+    dispatch({type: MEMORY_R});
+  }
+
+  //Function to clear memory
+  const memoryC= () =>
+  {
+    dispatch({type: MEMORY_C});
+  }
+
 
   return (
     <div className="App">
@@ -17,44 +89,48 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation:</b> {state.operation} </span>
+              <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick = {() => memoryPlusClick()} value={"M+"}/>
+              <CalcButton onClick = {() => memoryR()} value={"MR"}/>
+              <CalcButton onClick = {() => memoryC()} value={"MC"}/>
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              {/* Apply the addOneClick to onClick  */}
+              {/* <CalcButton onClick = {addOneClick} value={1}/> */}
+              {/* Apply the applyNumberClick to onClick, pass in (1)  */}
+              <CalcButton onClick = {() => applyNumberClick(1)} value={1}/>
+              <CalcButton onClick = {() => applyNumberClick(2)} value={2}/>
+              <CalcButton onClick = {() => applyNumberClick(3)} value={3}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton onClick = {() => applyNumberClick(4)} value={4}/>
+              <CalcButton onClick = {() => applyNumberClick(5)} value={5}/>
+              <CalcButton onClick = {() => applyNumberClick(6)} value={6}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton onClick = {() => applyNumberClick(7)} value={7}/>
+              <CalcButton onClick = {() => applyNumberClick(8)} value={8}/>
+              <CalcButton onClick = {() => applyNumberClick(9)} value={9}/>
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton onClick = {() =>  changeOperationsClick("+")} value={"+"}/>
+              <CalcButton onClick = {() =>  changeOperationsClick("*")} value={"*"}/>
+              <CalcButton onClick = {() =>  changeOperationsClick("-")} value={"-"}/>
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              {/* call ClearDisplayClick with null as argument  */}
+              <CalcButton onClick = {() =>  clearDisplayClick(null)}value={"CE"}/>
             </div>
 
           </form>
