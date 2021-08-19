@@ -7,11 +7,8 @@ import CalcButton from './components/CalcButton';
 
 import { reducer, initialState } from './reducers/index';
 
-import { APPLY_NUMBER } from './actions/index';
+import { APPLY_NUMBER, NEW_MEMORY, CHANGE_OPERATION, CLEAR_DISPLAY, ADD_MEMORY, CLEAR_MEMORY } from './actions/index';
 
-import { CHANGE_OPERATION } from './actions/index'
-
-import { CLEAR_DISPLAY } from './actions/index'
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -33,9 +30,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={() => dispatch({ type:NEW_MEMORY })}/>
+              <CalcButton value={"MR"} onClick={() => dispatch({ type:ADD_MEMORY })}/>
+              <CalcButton value={"MC"} onClick={() => dispatch({ type:CLEAR_MEMORY })}/>
             </div>
 
             <div className="row">
