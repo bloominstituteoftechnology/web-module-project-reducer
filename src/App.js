@@ -5,7 +5,7 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 import reducer, { initialState } from '../src/reducers/index.js'
-import {addTwo, addOne, applyNumber} from './actions/index'
+import {applyNumber, changeOperation} from './actions/index'
 
 function App() {
   const [state, dispatch] = useReducer(reducer,initialState)
@@ -23,6 +23,20 @@ function App() {
   const handleApplyNumber = (e) => {
     dispatch(applyNumber(e))
   }
+
+  const addOperation = () => {
+    dispatch(changeOperation('+'))
+  }
+
+  const subOperation = () => {
+    dispatch(changeOperation('-'))
+  }
+
+  const multOperation = () => {
+    dispatch(changeOperation('*'))
+  }
+
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -64,9 +78,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton onClick={addOperation} value={"+"}/>
+              <CalcButton onClick={multOperation} value={"*"}/>
+              <CalcButton onClick={subOperation} value={"-"}/>
             </div>
 
             <div className="row ce_button">
