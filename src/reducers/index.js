@@ -1,4 +1,4 @@
-import { ADD_TWO ,ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './../actions';
+import { ADD_TWO, ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_TOTAL, MEMORY_RECALL, MEMORY_CLEAR } from './../actions';
 // here we have to import the 'types' from the action
 // this is our initial state
 export const initialState = {
@@ -48,6 +48,22 @@ const reducer = (state, action) => {
             return ({
                 ...state,
                 total: 0
+            })
+        
+        case (MEMORY_TOTAL):
+            return ({
+                ...state,
+                memory: state.total
+            })
+        case (MEMORY_RECALL):
+            return ({
+                ...state,
+                total: state.memory
+            })
+        case (MEMORY_CLEAR):
+            return ({
+                ...state,
+                memory: 0
             })
         
             
