@@ -4,17 +4,14 @@ import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
+import reducer, { initialState } from './reducers';
 
-function reducer() {
-
-}
 
 
 function App() {
-  const [state, dispatch] = useReducer(calcReducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   
-
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
