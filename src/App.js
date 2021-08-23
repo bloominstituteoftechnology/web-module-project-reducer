@@ -23,10 +23,10 @@ const [state, dispatch] = useReducer(reducer, initialState);
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={state.memory}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
               <span id="operation"><b>Operation:</b>{state.operation}</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="memory"><b>Memory:</b>{state.memory}</span>
             </div>
            
             <div className="row">
