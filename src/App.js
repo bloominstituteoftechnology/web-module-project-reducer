@@ -4,13 +4,15 @@ import React, { useReducer } from 'react';
 // when importing default exports, don't enclose in {}
 import reducer, { initialState } from './reducers';
 
+
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
+
 // importing action creators
-import { addOne, applyNumber, changeOperation } from './actions/index';
+import { addOne, applyNumber, changeOperation, clearDisplay } from './actions/index';
 
 function App() {
 // using useReducer hook to get access to the app state and the dispatch function
@@ -39,6 +41,11 @@ const minusEventHandler = () => {
 const multiplyEventHandler = () => {
   dispatch(changeOperation('*'));
   console.log(additionEventHandler);
+}
+
+const clearDisplayHandler = () => {
+  dispatch(clearDisplay());
+  console.log(clearDisplay);
 }
 
 // add additional operators
@@ -98,7 +105,7 @@ const multiplyEventHandler = () => {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={clearDisplayHandler}/>
             </div>
 
           </form>
