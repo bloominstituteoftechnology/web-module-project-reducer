@@ -18,9 +18,32 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 
 // ??? how is this connected to button 1
-const handleChangesButtonOne = () => {
-  dispatch(addOne());
+// const handleChangesButtonOne = () => {
+//   dispatch(addOne());
+// }
+
+const eventHandler = (banana) => {
+  dispatch(applyNumber(banana));
 }
+
+const additionEventHandler = () => {
+  dispatch(changeOperation('+'));
+  console.log(additionEventHandler);
+}
+
+const minusEventHandler = () => {
+  dispatch(changeOperation('-'));
+  console.log(additionEventHandler);
+}
+
+const multiplyEventHandler = () => {
+  dispatch(changeOperation('*'));
+  console.log(additionEventHandler);
+}
+
+// add additional operators
+// add numbers
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -44,27 +67,34 @@ const handleChangesButtonOne = () => {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={handleChangesButtonOne}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={() => eventHandler(1)}/>
+              <CalcButton value={2} onClick={() => eventHandler(2)}/>
+              <CalcButton value={3} onClick={() => 
+              eventHandler(3)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={() => 
+              eventHandler(4)}/>
+              <CalcButton value={5} onClick={() => 
+                eventHandler(5)}/>
+              <CalcButton value={6} onClick={() => 
+                eventHandler(5)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={() => 
+              eventHandler(7)}/>
+              <CalcButton value={8} onClick={() => 
+              eventHandler(8)}/>
+              <CalcButton value={9} onClick={() => 
+              eventHandler(9)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={ additionEventHandler}/>
+              <CalcButton value={"*"} onClick={multiplyEventHandler}/>
+              <CalcButton value={"-"} onClick={minusEventHandler}/>
             </div>
 
             <div className="row ce_button">
