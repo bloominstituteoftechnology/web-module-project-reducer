@@ -12,7 +12,7 @@ import CalcButton from './components/CalcButton';
 
 
 // importing action creators
-import { addOne, applyNumber, changeOperation, clearDisplay } from './actions/index';
+import { addOne, applyNumber, changeOperation, clearDisplay, memoryClear, memoryPlus, memoryRecall } from './actions/index';
 
 function App() {
 // using useReducer hook to get access to the app state and the dispatch function
@@ -48,6 +48,21 @@ const clearDisplayHandler = () => {
   console.log(clearDisplay);
 }
 
+const memoryPlusHandler = () => {
+  dispatch(memoryPlus());
+  console.log(memoryPlus);
+}
+
+const memoryClearHandler = () => {
+  dispatch(memoryClear());
+  console.log(memoryClear);
+}
+
+const memoryRecallHandler = () => {
+  dispatch(memoryRecall());
+  console.log(memoryRecall);
+}
+
 // add additional operators
 // add numbers
 
@@ -68,9 +83,12 @@ const clearDisplayHandler = () => {
             </div>
            
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={() => memoryPlusHandler()}/>
+
+              <CalcButton value={"MR"} onClick={
+            () => memoryRecallHandler()}/>
+
+              <CalcButton value={"MC"} onClick={() => memoryClearHandler()}/>
             </div>
 
             <div className="row">

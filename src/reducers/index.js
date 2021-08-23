@@ -1,5 +1,5 @@
 // Reducer Index
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_CLEAR, MEMORY_PLUS, MEMORY_RECALL } from './../actions';
 
 export const initialState = {
     total: 0,
@@ -43,6 +43,27 @@ const reducer = (state, action) => {
                 ...state,
                 total: state.total = 0
             });
+
+        case(MEMORY_PLUS):
+            return({
+                ...state,
+                memory: state.total 
+            })
+
+        case(MEMORY_RECALL):
+            return({
+                ...state,
+                total: state.memory
+            })
+
+        case(MEMORY_CLEAR):
+            return({
+                ...state,
+                memory: state.memory = 0
+            })
+
+
+
         default:
             return state;
     }
