@@ -1,3 +1,4 @@
+// ACTIONS INDEX
 export const ADD_ONE = "ADD_ONE";
 
 export const APPLY_NUMBER = "APPLY_NUMBER";
