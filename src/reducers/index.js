@@ -17,8 +17,8 @@ const calculateResult = (num1, num2, operation) => {
             return num1 - num2;
     }
 }
-// ??? is it ok to add export here ???
-export const reducer = (state, action) => {
+
+const reducer = (state, action) => {
     switch(action.type) {
         case(ADD_ONE):
             return({

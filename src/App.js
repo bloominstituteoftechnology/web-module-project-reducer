@@ -1,18 +1,26 @@
 // importing useReducer hook
 import React, { useReducer } from 'react';
 // importing app reducer & intialState
-import { initialState, reducer } from './reducers';
+// when importing default exports, don't enclose in {}
+import reducer, { initialState } from './reducers';
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
-
+// importing action creators
+import { addOne, applyNumber, changeOperation } from './actions/index';
 
 function App() {
 // using useReducer hook to get access to the app state and the dispatch function
 const [state, dispatch] = useReducer(reducer, initialState);
+
+
+// ??? how is this connected to button 1
+const handleChangesButtonOne = () => {
+  dispatch(addOne());
+}
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -36,7 +44,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton value={1} onClick={handleChangesButtonOne}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
