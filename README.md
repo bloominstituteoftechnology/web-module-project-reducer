@@ -2,6 +2,22 @@
 
 This module explored the reducer pattern. During the module, you studied what immutability is, what reducers, actions and dispatch are, and how to use the reducer hook. In this project, you will practice each of the steps of building state and actions into an application. We will do this by both adding in and building from scratch all of the pieces of the reducer pattern.
 
+- [The Reducer Pattern Module Project: The Calculator](#the-reducer-pattern-module-project-the-calculator)
+  - [Objectives](#objectives)
+  - [Introduction](#introduction)
+  - [Instructions](#instructions)
+    - [Task 1: Project Set Up](#task-1-project-set-up)
+    - [Task 2: Project Requirements](#task-2-project-requirements)
+      - [Connect The Reducer](#connect-the-reducer)
+      - [Display our state within the UI.](#display-our-state-within-the-ui)
+      - [Connect a premade action.](#connect-a-premade-action)
+      - [Connect a better premade action.](#connect-a-better-premade-action)
+      - [Create and connect an action creator.](#create-and-connect-an-action-creator)
+      - [Create and connect a reducer case and action creator.](#create-and-connect-a-reducer-case-and-action-creator)
+      - [Add in memory functions from scratch.](#add-in-memory-functions-from-scratch)
+    - [Task 3: Stretch goals](#task-3-stretch-goals)
+  - [Rick Mansfields Pull req link](#rick-mansfields-pull-req-link)
+
 ## Objectives
 - Understand how to use useReducer hook.
 - Get comfortable connecting a reducer state to an application's UI.
@@ -99,3 +115,7 @@ export const initialState = {
 ### Task 3: Stretch goals
 - [ ] There is a version of the calculator focuses on adding individual digits, rather then entire numbers. How do you imagine adding an individual digit to the total state?
 - [ ] [Here is an example](https://freshman.tech/calculator/) of a (non-reducer) approach to building an javascript calculator. Feel free to make a new branch and use the basic ideas in the post to build a new version of the calculator.
+
+## Rick Mansfields Pull req link
+
+- [Link]()
