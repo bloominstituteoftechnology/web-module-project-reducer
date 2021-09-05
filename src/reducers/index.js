@@ -10,6 +10,7 @@ export const initialState = {
 }
 
 const calculateResult = (num1, num2, operation) => {
+    //eslint-disable-next-line
     switch(operation) {
         case("+"):
             return num1 + num2;
@@ -18,6 +19,7 @@ const calculateResult = (num1, num2, operation) => {
         case("-"):
             return num1 - num2;
     }
+    
 }
 
 const reducer = (state, action) => {
