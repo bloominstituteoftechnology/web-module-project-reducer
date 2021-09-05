@@ -79,14 +79,14 @@ export const initialState = {
 
 #### Connect a better premade action.
 > *Adding indivisual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
-* [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
-* [ ] Import the `applyNumber` action creator into `App.js.`
-* [ ] Remove or comment out the `addOne` event handler from the 1 button.
-* [ ] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
-* [ ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
-* [ ] **Test** that clicking the one button still adds one to the total display on the browser.
-* [ ] Connect all other number buttons to your new event handler, passing in their respective values.
-* [ ] **Test** that clicking on each button will add its respective value to the total display.
+* [ ] 16 Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
+* [ ] 17 Import the `applyNumber` action creator into `App.js.`
+* [ ] 18 Remove or comment out the `addOne` event handler from the 1 button.
+* [ ] 19 Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
+* [ ] 20 Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
+* [ ] 21 **Test** that clicking the one button still adds one to the total display on the browser.
+* [ ] 22 Connect all other number buttons to your new event handler, passing in their respective values.
+* [ ] 21 **Test** that clicking on each button will add its respective value to the total display.
 
 #### Create and connect an action creator.
 > *Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!*
