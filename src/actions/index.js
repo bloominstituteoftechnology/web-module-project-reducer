@@ -1,6 +1,7 @@
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = "CLEAR_DISLAY";
+export const ADD_MEMORY = "ADD_MEMORY";
 
 
 export const applyNumber = (number) => {
@@ -11,6 +12,11 @@ export const changeOperation = (operation) => {
   return({type: CHANGE_OPERATION, payload: operation});
 }
 
-export const cleardisplay = () => {
+export const clearDisplay = () => {
   return({type: CLEAR_DISPLAY});
 }
+
+export const addMemory = () => {
+  return({type: ADD_MEMORY});
+}
+
