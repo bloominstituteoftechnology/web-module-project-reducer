@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useReducer } from "react";
 
-import './App.css';
+import "./App.css";
 
-import TotalDisplay from './components/TotalDisplay';
-import CalcButton from './components/CalcButton';
+import TotalDisplay from "./components/TotalDisplay";
+import CalcButton from "./components/CalcButton";
 
 function App() {
 
