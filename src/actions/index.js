@@ -4,6 +4,7 @@ export const APPLY_NUMBER = 'APPLY_NUMBER';
 export const CHANGE_OPERATION = 'CHANGE_OPERATION';
 export const MEMORY_ADD = 'MEMORY_ADD';
 export const CLEAR_MEMORY = 'CLEAR_MEMORY';
+export const USE_MEMORY = 'USE_MEMORY';
 export const addOne = () => {
   return { type: ADD_ONE };
 };
@@ -26,4 +27,8 @@ export const addToMemory = () => {
 
 export const clearMemory = () => {
   return { type: CLEAR_MEMORY };
+};
+
+export const useNumMemory = () => {
+  return { type: USE_MEMORY };
 };

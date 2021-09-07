@@ -7,6 +7,7 @@ import {
   clearOperation,
   addToMemory,
   clearMemory,
+  useNumMemory,
 } from './actions';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
@@ -50,7 +51,7 @@ function App() {
 
             <div className='row'>
               <CalcButton value={'M+'} onClick={() => handleMemory()} />
-              <CalcButton value={'MR'} />
+              <CalcButton value={'MR'} onClick={() => dispatch(useNumMemory)} />
               <CalcButton
                 value={'MC'}
                 onClick={() => dispatch(clearMemory())}
