@@ -1,6 +1,12 @@
+import {
+  applyNumber,
+  changeOperation,
+  clearDisplay,
+  setMemory,
+} from "./actions/index";
+
 import React, { useReducer } from "react";
 import reducer, { initialState } from "./reducers/index";
-import { applyNumber, changeOperation, clearDisplay } from "./actions/index";
 
 import "./App.css";
 
@@ -20,6 +26,10 @@ function App() {
 
   const clearClick = () => {
     dispatch(clearDisplay());
+  };
+
+  const mplusClick = () => {
+    dispatch(setMemory());
   };
 
   return (
@@ -45,7 +55,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
+              <CalcButton value={"M+"} onClick={() => mplusClick()} />
               <CalcButton value={"MR"} />
               <CalcButton value={"MC"} />
             </div>
