@@ -4,6 +4,7 @@ import {
   clearDisplay,
   setMemory,
   applyMemory,
+  clearMemory,
 } from "./actions/index";
 
 import React, { useReducer } from "react";
@@ -37,6 +38,10 @@ function App() {
     dispatch(applyMemory());
   };
 
+  const mcClick = () => {
+    dispatch(clearMemory());
+  };
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -62,7 +67,7 @@ function App() {
             <div className="row">
               <CalcButton value={"M+"} onClick={() => mplusClick()} />
               <CalcButton value={"MR"} onClick={() => mrClick()} />
-              <CalcButton value={"MC"} />
+              <CalcButton value={"MC"} onClick={() => mcClick()} />
             </div>
 
             <div className="row">
