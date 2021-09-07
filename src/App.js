@@ -63,10 +63,7 @@ function App() {
             </div>
 
             <div className='row ce_button'>
-              <CalcButton
-                onClick={() => dispatch({ type: 'ADD_ONE' })}
-                value={'CE'}
-              />
+              <CalcButton value={'CE'} />
             </div>
           </form>
         </div>

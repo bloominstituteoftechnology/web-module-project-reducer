@@ -43,5 +43,3 @@ export const reducer = (state, action) => {
 };
 
 export default reducer;
-
-1 + 1 ,1 + 1;
