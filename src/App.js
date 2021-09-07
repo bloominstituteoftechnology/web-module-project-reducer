@@ -49,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="/"><img width="40px" src="./Lambda-Logo-Red.png" alt="" /> Lambda Reducer Challenge</a>
+        <a className="navbar-brand" href="/"><img width="40px" src="./assets/RickMansfield.svg" alt=""/>Rick's Calulator Built with Javascript Reducer</a>
       </nav>
 
       <div className="container row mt-5">
