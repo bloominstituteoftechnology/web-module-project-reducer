@@ -6,10 +6,15 @@ import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
 import reducer, { initialState } from './reducers'; // 2 
+import { addOne } from './actions'; // 7 (4,5,6 = line 27 - 31)
+
+
 
 function App() {
   const [ state, dispatch ] = useReducer(reducer, initialState);// 3 grabbing our initial state from index.js 
-
+const handle1click = () => {
+  dispatch(addOne());// 9 (8 was adding the onClick on line 42) what does dispatch do again? 
+}
   console.log(state) // 3
   return (
     <div className="App">
@@ -21,20 +26,20 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={state.total}/>
+            <TotalDisplay value={state.total}/> 
             <div className="row details">
-              <span id="operation"><b>Operation:</b>{state.operation}</span>
+              <span id="operation"><b>Operation:</b>{state.operation}</span> 
               <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             
-            <div className="row">
+            <div className="row"> 
               <CalcButton value={"M+"}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton value={1} onClick={handle1click}/> 
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
