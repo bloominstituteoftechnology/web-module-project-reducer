@@ -11,7 +11,8 @@ import {
   changeOperation, 
   addMemory, 
   clearDisplay,
-  applyMemory
+  applyMemory,
+  clearMemory
  } 
   from './actions'; // 7 (4,5,6 = line 27 - 31)
 
@@ -35,6 +36,9 @@ const handleMemoryAdd = () => {
 const handleMemoryApply = () => {
   dispatch(applyMemory());
 }
+const handleMemoryClear = () => {
+  dispatch(clearMemory());
+}
 
   console.log(state) // 3
   return (
@@ -56,7 +60,7 @@ const handleMemoryApply = () => {
             <div className="row"> 
               <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
               <CalcButton value={"MR"} onClick={handleMemoryApply}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={handleMemoryClear}/>
             </div>
 
             <div className="row">
