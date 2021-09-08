@@ -40,7 +40,7 @@ const handleMemoryClear = () => {
   dispatch(clearMemory());
 }
 
-  console.log(state) // 3
+  // console.log(state) // 3
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -58,9 +58,9 @@ const handleMemoryClear = () => {
             </div>
             
             <div className="row"> 
-              <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
-              <CalcButton value={"MR"} onClick={handleMemoryApply}/>
-              <CalcButton value={"MC"} onClick={handleMemoryClear}/>
+              <CalcButton value={"M+"} onClick={()=> handleMemoryAdd}/>
+              <CalcButton value={"MR"} onClick={()=> handleMemoryApply}/>
+              <CalcButton value={"MC"} onClick={()=> handleMemoryClear}/>
             </div>
 
             <div className="row">
@@ -88,7 +88,7 @@ const handleMemoryClear = () => {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"} onClick={handleClearDisplay}/>
+              <CalcButton value={"CE"} onClick={()=> handleClearDisplay(0)}/>
             </div>
 
           </form>

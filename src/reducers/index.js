@@ -1,5 +1,4 @@
 import { 
-    ADD_ONE, 
     APPLY_NUMBER, 
     CHANGE_OPERATION, 
     CLEAR_DISPLAY, 
@@ -12,7 +11,7 @@ import {
 
 export const initialState = {
     total: 0,
-    operation: "*",
+    operation: "+",
     memory: 0
 }
 
@@ -29,11 +28,6 @@ const calculateResult = (num1, num2, operation) => {
  
 const reducer = (state, action) => {
     switch(action.type) {
-        case(ADD_ONE):
-            return({
-                ...state,
-                total: state.total + 1
-            });
 
         case(APPLY_NUMBER):
             return ({ 
