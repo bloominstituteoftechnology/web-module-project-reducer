@@ -31,13 +31,13 @@ const handleClearDisplay = () => {
   dispatch(clearDisplay());
 }
 const handleMemoryAdd = () => {
-  dispatch(addMemory());
+  dispatch(addMemory()); 
 }
 const handleMemoryApply = () => {
   dispatch(applyMemory());
 }
 const handleMemoryClear = () => {
-  dispatch(clearMemory());
+  dispatch(clearMemory()); 
 }
 
   // console.log(state) // 3
