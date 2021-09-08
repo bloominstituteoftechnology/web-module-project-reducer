@@ -6,22 +6,36 @@ import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
 import reducer, { initialState } from './reducers'; // 2 
-import { applyNumber, changeOperation } from './actions'; // 7 (4,5,6 = line 27 - 31)
+import { 
+  applyNumber, 
+  changeOperation, 
+  addMemory, 
+  clearDisplay,
+  applyMemory
+ } 
+  from './actions'; // 7 (4,5,6 = line 27 - 31)
 
 
 
 function App() {
   const [ state, dispatch ] = useReducer(reducer, initialState);// 3 grabbing our initial state from index.js 
+
 const handleNumberClick = (number) => {
   dispatch(applyNumber(number));// 9 (8 was adding the onClick on line 42) what does dispatch do again? 
 }
 const handleOperationClick = (operator) => {
   dispatch(changeOperation(operator));
 }
-
 const handleClearDisplay = () => {
   dispatch(clearDisplay());
 }
+const handleMemoryAdd = () => {
+  dispatch(addMemory());
+}
+const handleMemoryApply = () => {
+  dispatch(applyMemory());
+}
+
   console.log(state) // 3
   return (
     <div className="App">
@@ -40,8 +54,8 @@ const handleClearDisplay = () => {
             </div>
             
             <div className="row"> 
-              <CalcButton value={"M+"} onClick/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
+              <CalcButton value={"MR"} onClick={handleMemoryApply}/>
               <CalcButton value={"MC"}/>
             </div>
 
