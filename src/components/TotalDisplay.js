@@ -27,8 +27,12 @@ export default TotalDisplay;
  
    
  
+   
  
  
+ 
+ 
+   
  
    
  
@@ -37,8 +41,12 @@ export default TotalDisplay;
  
    
  
+   
  
  
+ 
+ 
+   
  
    
  
@@ -46,6 +54,21 @@ export default TotalDisplay;
  
  
    
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
  
  
  
