@@ -100,11 +100,11 @@ export const initialState = {
 
 > _Now let's add in the clear display feature. For this, you will be doing every part of the reducer / action creator process._
 
-- [ ] Within `./reducers/index,` add in a case for `CLEAR_DISPLAY`. Clear display should set the total value in state to 0.
-- [ ] Within `./actions/index,` add in an action creator and action string constant to for `CLEAR_DISPLAY`. Make sure to import that constant into your reducer file.
-- [ ] Within `App.js,` import in your clearDisplay action creator.
-- [ ] Create and connect an event handler to the "CE" button that dispatches your clearDisplay action creator.
-- [ ] **Test** that your clearDisplay button works as expected.
+- [x] Within `./reducers/index,` add in a case for `CLEAR_DISPLAY`. Clear display should set the total value in state to 0.
+- [x] Within `./actions/index,` add in an action creator and action string constant to for `CLEAR_DISPLAY`. Make sure to import that constant into your reducer file.
+- [x] Within `App.js,` import in your clearDisplay action creator.
+- [x] Create and connect an event handler to the "CE" button that dispatches your clearDisplay action creator.
+- [x] **Test** that your clearDisplay button works as expected.
 
 #### Add in memory functions from scratch.
 
