@@ -90,11 +90,11 @@ export const initialState = {
 
 > _Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!_
 
-- [ ] Note the `CHANGE_OPERATION` action case (in `./reducer/index.js`). This reducer case takes in a operator value (+, \* or -) and assigns it to state.
-- [ ] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`
-- [ ] Import in your new action creator into `App.js.`
-- [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
-- [ ] **Test** that you can successfully change operators and apply numbers in each case.
+- [x] Note the `CHANGE_OPERATION` action case (in `./reducer/index.js`). This reducer case takes in a operator value (+, \* or -) and assigns it to state.
+- [x] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`
+- [x] Import in your new action creator into `App.js.`
+- [x] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
+- [x] **Test** that you can successfully change operators and apply numbers in each case.
 
 #### Create and connect a reducer case and action creator.
 
