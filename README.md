@@ -29,9 +29,9 @@ This simplified calculator adds the entire number selected, rather then adds dig
 ### Task 2: Project Requirements
 #### Connect The Reducer
 > *Let's start our process by connecting our UI to our reducer and initial state.*
-* [ ] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
-* [ ] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
-* [ ] Note that the `CalcButton` component takes in an `onClick` method and a value, displays that value and attaches the passed `onClick` method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+* [x] Take a tour of application, in particular the `App.js`, `/reducer/index.js`, and `/action/index.js` files.
+* [x] Note that the `TotalDisplay` component takes in a value and displays it in a styled textarea. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
+* [x] Note that the `CalcButton` component takes in an `onClick` method and a value, displays that value and attaches the passed `onClick` method to the button ui. YOU WILL NOT NEED TO MODIFY THIS COMPONENT.
 * [ ] Within App.js, import the useReducer hook, our application's reducer and initialState object.
 * [ ] Use useReducer hook to get access to the application state and the dispatch function.
 
