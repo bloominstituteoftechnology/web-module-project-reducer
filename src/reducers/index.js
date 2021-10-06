@@ -1,45 +1,83 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+import
+{
+    ADD_ONE,
+    APPLY_NUMBER,
+    CHANGE_OPERATION,
+    CLEAR_DISPLAY,
+    MEMORY_ADD,
+    MEMORY_TOTAL,
+    MEMORY_CLEAR
+} from './../actions';
 
 export const initialState = {
-    total: 100,
-    operation: "*",
-    memory: 100
-}
+    total: 0,
+    operation: " ",
+    memory: 0
+};
 
-const calculateResult = (num1, num2, operation) => {
-    switch(operation) {
-        case("+"):
+const calculateResult = (num1, num2, operation) =>
+{
+    // eslint-disable-next-line default-case
+    switch (operation)
+    {
+        case ("+"):
             return num1 + num2;
-        case("*"):
+        case ("*"):
             return num1 * num2;
-        case("-"):
+        case ("-"):
             return num1 - num2;
     }
-}
+};
 
-const reducer = (state, action) => {
-    switch(action.type) {
-        case(ADD_ONE):
-            return({
+const reducer = (state, action) =>
+{
+    switch (action.type)
+    {
+        case (ADD_ONE):
+            return ({
                 ...state,
                 total: state.total + 1
             });
 
-        case(APPLY_NUMBER):
-            return ({ 
-                ...state, 
+        case (APPLY_NUMBER):
+            return ({
+                ...state,
                 total: calculateResult(state.total, action.payload, state.operation)
             });
-        
-        case(CHANGE_OPERATION):
+
+        case (CHANGE_OPERATION):
             return ({
                 ...state,
                 operation: action.payload
             });
-            
+
+        case (CLEAR_DISPLAY):
+            return ({
+                ...state,
+                total: 0
+            });
+
+        case (MEMORY_ADD):
+            return ({
+                ...state,
+                memory: state.total
+            });
+
+        case (MEMORY_TOTAL):
+            return ({
+                ...state,
+                total: calculateResult(state.total, state.memory, state.operation)
+            });
+
+        case (MEMORY_CLEAR):
+            return ({
+                ...state,
+                memory: 0
+            });
+
         default:
             return state;
     }
-}
+};
 
 export default reducer;
