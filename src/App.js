@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useReducer } from 'react';
 
 import reducer, { initialState } from './reducers/index';
@@ -8,14 +9,15 @@ import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
 import
-    {
-        addOne,
-        applyNumber,
-        changeOperation,
-        clearDisplay,
-        memoryAdd,
-        memoryTotal
-    } from './actions';
+{
+    addOne,
+    applyNumber,
+    changeOperation,
+    clearDisplay,
+    memoryAdd,
+    memoryTotal,
+    memoryClear
+} from './actions';
 
 function App()
 {
@@ -52,9 +54,15 @@ function App()
         dispatch(memoryTotal());
     };
 
+    const handleMemoryClear = () =>
+    {
+        dispatch(memoryClear());
+    };
+
     return (
         <div className="App">
             <nav className="navbar navbar-dark bg-dark">
+                // eslint-disable-next-line jsx-a11y/anchor-is-valid
                 <a className="navbar-brand" href="#"><img width="40px" src="./Lambda-Logo-Red.png" /> Lambda Reducer Challenge</a>
             </nav>
 
@@ -71,7 +79,7 @@ function App()
                         <div className="row">
                             <CalcButton value={"M+"} onClick={() => handleMemoryAdd()} />
                             <CalcButton value={"MR"} onClick={() => handleMemoryTotal()} />
-                            <CalcButton value={"MC"} />
+                            <CalcButton value={"MC"} onClick={() => handleMemoryClear()} />
                         </div>
 
                         <div className="row">
