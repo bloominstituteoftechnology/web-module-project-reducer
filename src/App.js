@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useState, useReducer} from 'react';
+import reducer, {initialState} from './reducers';
+import { addOne, applyNumber } from './actions'
+
 
 import './App.css';
 
