@@ -1,4 +1,4 @@
-# The Reducer Pattern Module Project: The Calculator
+# The Reducer Pattern Module Project: The Calculator cheyenne bowman
 
 This module explored the reducer pattern. During the module, you studied what immutability is, what reducers, actions and dispatch are, and how to use the reducer hook. In this project, you will practice each of the steps of building state and actions into an application. We will do this by both adding in and building from scratch all of the pieces of the reducer pattern.
 
