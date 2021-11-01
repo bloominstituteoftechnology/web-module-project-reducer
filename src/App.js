@@ -1,11 +1,15 @@
-import React from 'react';
-
+import React, { useReducer } from 'react';
+import reducer, { initialState} from './reducers/index';
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
+let currentState = initialState;
+ console.log("currentState: ", currentState);
+ 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className="App">
@@ -17,10 +21,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+            <TotalDisplay value={state.total} value={0}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span value={state.operation} id="operation"><b>Operation:</b> X</span>
+              <span value={state.memory} id="memory"><b>Memory:</b> 0</span>
             </div>
             
             <div className="row">
