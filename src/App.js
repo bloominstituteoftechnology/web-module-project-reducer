@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, {initialState} from './reducers';
-import { addOne, applyNumber, changeOperation } from './actions'
+import { addOne, applyNumber, changeOperation, clearDisplay } from './actions'
 
 
 import './App.css';
@@ -19,6 +19,9 @@ const handleApplyNumber = (number) =>{
 }
 const handleChangeOperation = (operation) =>{
   dispatch(changeOperation(operation))
+}
+const handleClearDisplay = () =>{
+  dispatch(clearDisplay())
 }
 
 
@@ -68,9 +71,10 @@ console.log("current state: ", state);
               <CalcButton onClick ={()=> {handleChangeOperation("*")}} value={"*"}/>
               <CalcButton onClick ={()=> {handleChangeOperation("-")}} value={"-"}/>
             </div>
-
+            
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton onClick = {handleClearDisplay} value={"CE"}/>
+              
             </div>
 
           </form>
