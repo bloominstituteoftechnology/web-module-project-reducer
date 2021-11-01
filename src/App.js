@@ -1,11 +1,31 @@
-import React from 'react';
-
+import React, {useReducer, useState} from 'react';
 import './App.css';
-
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
+import reducer, {initialState} from './reducers'
+import { addOne, applyNumber, changeOperation, clearTotal, addMemory, memoryTotal, clearMemory } from './actions/index'
 
 function App() {
+
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+    console.log(state,'test')
+
+    const handleAddClick = ()=> {
+      dispatch(applyNumber(1));
+    }
+  
+    const handleSubtractClick = ()=> {
+      dispatch(applyNumber(-1));
+    }
+    const handleMultplyClick = ()=> {
+      dispatch(applyNumber());
+    }
+  
+    // const handleClear = ()=> {
+    //   dispatch(clearAction());
+    // } 
+
 
   return (
     <div className="App">
@@ -17,10 +37,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation:</b> {state.operation}</span>
+              <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             
             <div className="row">
@@ -30,7 +50,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton  onClick={handleAddClick} value={1}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
