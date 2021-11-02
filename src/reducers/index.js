@@ -1,4 +1,4 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, CLEAR_MEMORY, ACTION_MR } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, CLEAR_MEMORY, ACTION_MR, ACTION_MP } from './../actions';
 
 export const initialState = {
     total: 100,
@@ -21,6 +21,10 @@ const calculateResult = (num1, num2, operation) => {
 
 const mrResult = (num1, num2) => {
         return num1 = num2;     
+}
+
+const mpResult = (num1, num2) => {
+    return num1 = num2;     
 }
 
 const reducer = (state, action) => {
@@ -48,6 +52,12 @@ const reducer = (state, action) => {
                     ...state, 
                     total: mrResult(state.total, state.memory)
                 };
+
+        case ACTION_MP:
+                return { 
+                    ...state, 
+                    memory: mpResult(state.memory, state.total)
+                    };
         
         case(CHANGE_OPERATION):
             return ({

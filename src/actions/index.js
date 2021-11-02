@@ -4,6 +4,8 @@ export const CLEAR_MEMORY = "CLEAR_MEMORY"
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const ACTION_MR = "ACTION_MR";
+export const ACTION_MP = "ACTION_MP";
+
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -27,6 +29,10 @@ export const clearMemoryAction = () => {
 
 export const actionMR = () => {
     return({type: ACTION_MR});
+}
+
+export const actionMp = () => {
+    return({type: ACTION_MP});
 }
 
 
