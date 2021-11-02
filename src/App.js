@@ -13,8 +13,15 @@ function App() {
 
   console.log('state', state);
 
+  const addOneChange = (value) => {
+    console.log("addOneChange buttom", value)
+    dispatch(addOne())
+  }
+
   const onClickNum = (e) => {
     console.log('Number button label:', e.target.innerText);
+    dispatch(addOne())
+    
   }
 
   const onClickOp = (e) => {
