@@ -19,11 +19,7 @@ const calculateResult = (num1, num2, operation) => {
     }
 }
 
-const mrResult = (num1, num2) => {
-        return num1 = num2;     
-}
-
-const mpResult = (num1, num2) => {
+const sw = (num1, num2) => {
     return num1 = num2;     
 }
 
@@ -50,13 +46,13 @@ const reducer = (state, action) => {
         case ACTION_MR:
                 return { 
                     ...state, 
-                    total: mrResult(state.total, state.memory)
+                    total: sw(state.total, state.memory)
                 };
 
         case ACTION_MP:
                 return { 
                     ...state, 
-                    memory: mpResult(state.memory, state.total)
+                    memory: sw(state.memory, state.total)
                     };
         
         case(CHANGE_OPERATION):
