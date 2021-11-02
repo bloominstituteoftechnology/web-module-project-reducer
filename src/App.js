@@ -11,16 +11,10 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log('state', state);
-
-  // const addOneChange = (value) => {
-  //   console.log("addOneChange buttom", value)
-  //   // dispatch(addOne());
-  //   dispatch(applyNumber());
-  // }
+  // console.log('state', state);
 
   const onClickNum = (e) => {
-    console.log('Number button label:', e.target.innerText);
+    // console.log('Number button label:', e.target.innerText);
     // dispatch(addOne())
     dispatch(applyNumber(parseInt(e.target.innerText)));
   }
