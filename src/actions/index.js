@@ -24,3 +24,5 @@ export const clearMemoryAction = ()=>{
     return({type:CLEAR_MEMORY});
 }
 
+
+

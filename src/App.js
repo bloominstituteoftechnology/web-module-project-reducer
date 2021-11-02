@@ -13,15 +13,16 @@ function App() {
 
   console.log('state', state);
 
-  const addOneChange = (value) => {
-    console.log("addOneChange buttom", value)
-    dispatch(addOne())
-  }
+  // const addOneChange = (value) => {
+  //   console.log("addOneChange buttom", value)
+  //   // dispatch(addOne());
+  //   dispatch(applyNumber());
+  // }
 
   const onClickNum = (e) => {
     console.log('Number button label:', e.target.innerText);
-    dispatch(addOne())
-    
+    // dispatch(addOne())
+    dispatch(applyNumber(parseInt(e.target.innerText)));
   }
 
   const onClickOp = (e) => {
