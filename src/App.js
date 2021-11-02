@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useReducer } from 'react';
+import reducer { initialState } from './..'
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
+import { initialState } from './reducers';
 
 function App() {
 
