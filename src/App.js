@@ -1,6 +1,6 @@
 import React, { useState, useReducer }  from 'react';
 import reducer,  { initialState} from './reducers'
-import { addOne, applyNumber, changeOp, clearAction, clearMemoryAction } from './actions';
+import { addOne, applyNumber, changeOp, clearDisplay, clearMemoryAction } from './actions';
 
 import './App.css';
 
@@ -34,8 +34,8 @@ function App() {
           return dispatch(changeOp("-"));
       case("*"):
           return dispatch(changeOp("*"));
-      // case("CE"):
-      //     return dispatch(clearAction());
+      case("CE"):
+          return dispatch(clearDisplay());
       // case("MC"):
       //     return dispatch(clearMemoryAction());
       default:
