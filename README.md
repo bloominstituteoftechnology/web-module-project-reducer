@@ -53,32 +53,32 @@ export const initialState = {
 
 #### Connect a premade action.
 > *Now that we can see our state, let's change allow the user to change it. Let's start with a simple premade action...adding one to our total.*
-* [ ] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
-* [ ] Import the `addOne` action creator into App.js.
+* [ .] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
+* [. ] Import the `addOne` action creator into App.js.
 * [ ] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
-* [ ] Within your event handler, dispatch the `addOne` action creator.
-* [ ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
-* [ ] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
+* [. ] Within your event handler, dispatch the `addOne` action creator.
+* [ .] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
+* [ .] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
 
 
 #### Connect a better premade action.
 > *Adding indivisual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
-* [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
-* [ ] Import the `applyNumber` action creator into `App.js.`
-* [ ] Remove or comment out the `addOne` event handler from the 1 button.
-* [ ] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
-* [ ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
-* [ ] **Test** that clicking the one button still adds one to the total display on the browser.
-* [ ] Connect all other number buttons to your new event handler, passing in their respective values.
-* [ ] **Test** that clicking on each button will add its respective value to the total display.
+* [. ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
+* [ .] Import the `applyNumber` action creator into `App.js.`
+* [.] Remove or comment out the `addOne` event handler from the 1 button.
+* [ .] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
+* [. ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
+* [ .] **Test** that clicking the one button still adds one to the total display on the browser.
+* [ .] Connect all other number buttons to your new event handler, passing in their respective values.
+* [. ] **Test** that clicking on each button will add its respective value to the total display.
 
 #### Create and connect an action creator.
 > *Right now our application only adds. Let's change that and give you practice creating and connecting action creators of your own!*
-* [ ] Note the `CHANGE_OPERATION` action case (in `./reducer/index.js`). This reducer case takes in a operator value (+, * or -) and assigns it to state.
-* [ ] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`
-* [ ] Import in your new action creator into `App.js.`
-* [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
-* [ ] **Test** that you can successfully change operators and apply numbers in each case.
+* [ .] Note the `CHANGE_OPERATION` action case (in `./reducer/index.js`). This reducer case takes in a operator value (+, * or -) and assigns it to state.
+* [. ] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`
+* [ .] Import in your new action creator into `App.js.`
+* [ .] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
+* [ .] **Test** that you can successfully change operators and apply numbers in each case.
 
 #### Create and connect a reducer case and action creator.
 > *Now let's add in the clear display feature. For this, you will be doing every part of the reducer / action creator process.*
