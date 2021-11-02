@@ -4,10 +4,13 @@ This module explored the reducer pattern. During the module, you studied what im
 
 ## Objectives
 - Understand how to use useReducer hook.
-- Get comfortable connecting a reducer state to an application's UI.
-- Successfully connect UI user events to the dispatching of reducer actions.
+- Get  user events to the dispatching of reducer actions.
 - Understand how to create reducer cases and the action creators that trigger them.
-- Learn how to step through and test thoroughly each step of the process.
+- Learn how to step 
+
+through and test thoroughly each step of the process.
+
+
 
 ## Introduction
 In this project, you will build an complete a simple calculator app that can add, multiply, subtract and clear numbers in any order as well as add in memory save and recall features. You will start by adding in missing pieces to the code and complete the process by building features in to the UI, reducer and actions files from scratch.
