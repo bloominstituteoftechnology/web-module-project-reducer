@@ -34,10 +34,10 @@ function App() {
           return dispatch(changeOp("-"));
       case("*"):
           return dispatch(changeOp("*"));
-      case("CE"):
-          return dispatch(clearAction());
-      case("MC"):
-          return dispatch(clearMemoryAction());
+      // case("CE"):
+      //     return dispatch(clearAction());
+      // case("MC"):
+      //     return dispatch(clearMemoryAction());
       default:
          return ;
     }
