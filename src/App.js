@@ -1,6 +1,6 @@
 import React, { useState, useReducer }  from 'react';
 import reducer,  { initialState} from './reducers'
-import { addOne, applyNumber, changeOp } from './actions';
+import { addOne, applyNumber, changeOp, clearAction } from './actions';
 
 import './App.css';
 
@@ -14,13 +14,17 @@ function App() {
   console.log('state', state);
 
   const onClick = (e) => {
-    console.log('value XXX', e.target.innerText);
+    console.log('button label:', e.target.innerText);
     
     switch(e.target.innerText) {
       case("+"):
           return dispatch(changeOp("+"));
       case("-"):
           return dispatch(changeOp("-"));
+      case("*"):
+          return dispatch(changeOp("*"));
+      case("CE"):
+          return dispatch(clearAction());
       default:
          return ;
     }
@@ -37,10 +41,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation:</b> {state.operation} </span>
+              <span id="memory"><b>Memory:</b> {state.memory} </span>
             </div>
             
             <div className="row">
