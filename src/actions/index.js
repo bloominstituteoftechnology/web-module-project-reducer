@@ -1,5 +1,6 @@
 export const ADD_ONE = "ADD_ONE";
 export const CLEAR = "CLEAR"
+export const CLEAR_MEMORY = "CLEAR_MEMORY"
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 
@@ -18,3 +19,8 @@ export const changeOp = (value)=>{
 export const clearAction = ()=>{
     return({type:CLEAR});
 }
+
+export const clearMemoryAction = ()=>{
+    return({type:CLEAR_MEMORY});
+}
+
