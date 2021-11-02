@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, {initialState} from './reducers';
-import { addOne, applyNumber, changeOperation, clearDisplay } from './actions'
+import { addOne, applyNumber, changeOperation, clearDisplay, addMemory, addMemoryToTotal, clearMemory } from './actions'
 
 
 import './App.css';
@@ -23,7 +23,15 @@ const handleChangeOperation = (operation) =>{
 const handleClearDisplay = () =>{
   dispatch(clearDisplay())
 }
-
+const handleAddMemory = () =>{
+  dispatch(addMemory(state.total))
+}
+const handleAddMemoryToTotal = () =>{
+  dispatch(addMemoryToTotal(state.memory))
+}
+const handleClearMemory =()=>{
+  dispatch(clearMemory())
+}
 
 console.log("current state: ", state);
   return (
@@ -43,9 +51,9 @@ console.log("current state: ", state);
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick = {handleAddMemory} value={"M+"}/>
+              <CalcButton onClick = {handleAddMemoryToTotal} value={"MR"}/>
+              <CalcButton onClick = {handleClearMemory} value={"MC"}/>
             </div>
 
             <div className="row">
