@@ -3,6 +3,7 @@ export const CLEAR_DISPLAY = "CLEAR_DISPLAY"
 export const CLEAR_MEMORY = "CLEAR_MEMORY"
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
+export const ACTION_MR = "ACTION_MR";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -22,6 +23,10 @@ export const clearDisplay = ()=>{
 
 export const clearMemoryAction = () => {
     return({type:CLEAR_MEMORY});
+}
+
+export const actionMR = () => {
+    return({type: ACTION_MR});
 }
 
 
