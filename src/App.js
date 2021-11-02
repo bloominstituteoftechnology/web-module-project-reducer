@@ -36,8 +36,8 @@ function App() {
           return dispatch(changeOp("*"));
       case("CE"):
           return dispatch(clearDisplay());
-      // case("MC"):
-      //     return dispatch(clearMemoryAction());
+      case("MC"):
+          return dispatch(clearMemoryAction());
       default:
          return ;
     }

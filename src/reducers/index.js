@@ -38,7 +38,7 @@ const reducer = (state, action) => {
                 return { ...state, total: 0};
 
         case CLEAR_MEMORY:
-                return { ...state, memory: 0 };
+                return { ...state, memory: 0};
         
         case(CHANGE_OPERATION):
             return ({

@@ -20,7 +20,7 @@ export const clearDisplay = ()=>{
     return({type:CLEAR_DISPLAY});
 }
 
-export const clearMemoryAction = ()=>{
+export const clearMemoryAction = () => {
     return({type:CLEAR_MEMORY});
 }
 
