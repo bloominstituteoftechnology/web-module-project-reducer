@@ -37,11 +37,11 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 #### Display our state within the UI.
 > *We now have access to the state within our App component (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen.*
-* [ ] Replace "X" with a reference to `state.operation` within the operation element.
-* [ ] Replace "0" with a reference to `state.memory` within the memory element.
-* [ ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
-* [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, * and 100 respectively)
-* [ ] **Test** that you are connected to state by changing the initialState value in your reducer to:
+* [ x] Replace "X" with a reference to `state.operation` within the operation element.
+* [x ] Replace "0" with a reference to `state.memory` within the memory element.
+* [x ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
+* [x ] Check to see that your total, operation and memory display in the UI match your initialState (100, * and 100 respectively)
+* [ x] **Test** that you are connected to state by changing the initialState value in your reducer to:
 ```
 export const initialState = {
     total: 0,
@@ -49,7 +49,7 @@ export const initialState = {
     memory: 0
 }
 ```
-* [ ] Check to see that your display correctly reflects the change to your state.
+* [x ] Check to see that your display correctly reflects the change to your state.
 
 #### Connect a premade action.
 > *Now that we can see our state, let's change allow the user to change it. Let's start with a simple premade action...adding one to our total.*
@@ -64,10 +64,10 @@ export const initialState = {
 #### Connect a better premade action.
 > *Adding indivisual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input*
 * [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
-* [ ] Import the `applyNumber` action creator into `App.js.`
-* [ ] Remove or comment out the `addOne` event handler from the 1 button.
-* [ ] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
-* [ ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
+* [x ] Import the `applyNumber` action creator into `App.js.`
+* [x ] Remove or comment out the `addOne` event handler from the 1 button.
+* [x ] Create an eventhandler that takes in a number as an argument and dispatches `applyNumber` with it.
+* [x ] Attach that eventhandler to the 1 button's `onClick` method, passing in a 1 as an argument. (Remember that we pass a function into that click handler, not the execution of a function)
 * [ ] **Test** that clicking the one button still adds one to the total display on the browser.
 * [ ] Connect all other number buttons to your new event handler, passing in their respective values.
 * [ ] **Test** that clicking on each button will add its respective value to the total display.
@@ -77,7 +77,7 @@ export const initialState = {
 * [ ] Note the `CHANGE_OPERATION` action case (in `./reducer/index.js`). This reducer case takes in a operator value (+, * or -) and assigns it to state.
 * [ ] Create an action creator (in `./actions/index.js`) that takes in an operator as an argument and creates an action object with the type `CHANGE_OPERATION.`
 * [ ] Import in your new action creator into `App.js.`
-* [ ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
+* [x ] Create and attach event handlers to the `+`, `-` and `*` buttons that dispatch your new action creator. Make sure you pass in the appropriate operator string in each case.
 * [ ] **Test** that you can successfully change operators and apply numbers in each case.
 
 #### Create and connect a reducer case and action creator.
