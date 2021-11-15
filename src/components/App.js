@@ -2,15 +2,14 @@ import React from 'react';
 
 import './App.css';
 
-import TotalDisplay from './components/TotalDisplay';
-import CalcButton from './components/CalcButton';
+import TotalDisplay from './TotalDisplay';
+import CalcButton from './CalcButton';
 
 function App() {
-
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">Reducer Challenge</a>
+        <a className="navbar-brand" href="#"> Reducer Challenge</a>
       </nav>
 
       <div className = "container row mt-5">
