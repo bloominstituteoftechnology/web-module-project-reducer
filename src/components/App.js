@@ -8,9 +8,29 @@ import CalcButton from './CalcButton';
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   
-  const clickOnOne = () => {
-    dispatch(actions.addOne())
+  const onClick = (e) => {
+    dispatch(actions.applyNumber(+e.target.value))
   } 
+
+  const changeOperation = (e) => {
+    dispatch(actions.changeOperation(e.target.value))
+  }
+
+  const clearDisplay = () => {
+    dispatch(actions.clearDisplay())
+  }
+
+  const saveToMemory = () => {
+    dispatch(actions.saveToMemory())
+  }
+
+  const applyFromMemory = () => {
+    dispatch(actions.applyFromMemory())
+  }
+
+  const clearMemory = () => {
+    dispatch(actions.clearMemory())
+  }
 
   return (
     <div className="App">
@@ -29,37 +49,37 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={saveToMemory} />
+              <CalcButton value={"MR"} onClick={applyFromMemory} />
+              <CalcButton value={"MC"} onClick={clearMemory}/>
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={clickOnOne} />
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={onClick} />
+              <CalcButton value={2} onClick={onClick} />
+              <CalcButton value={3} onClick={onClick} />
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={onClick} />
+              <CalcButton value={5} onClick={onClick} />
+              <CalcButton value={6} onClick={onClick} />
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={onClick} />
+              <CalcButton value={8} onClick={onClick} />
+              <CalcButton value={9} onClick={onClick} />
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={changeOperation} />
+              <CalcButton value={"*"} onClick={changeOperation} />
+              <CalcButton value={"-"} onClick={changeOperation} />
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={clearDisplay} />
             </div>
 
           </form>
