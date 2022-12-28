@@ -54,9 +54,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}onClick={(e)=> eventhandleNum(e)}/>
-              <CalcButton value={"*"}onClick={(e)=> eventhandleNum(e)}/>
-              <CalcButton value={"-"}onClick={(e)=> eventhandleNum(e)}/>
+              <CalcButton value={"+"}onClick={(e)=> eventhandlerOp(e)}/>
+              <CalcButton value={"*"}onClick={(e)=> eventhandlerOp(e)}/>
+              <CalcButton value={"-"}onClick={(e)=> eventhandlerOp(e)}/>
             </div>
 
             <div className="row ce_button">
