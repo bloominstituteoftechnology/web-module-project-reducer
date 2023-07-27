@@ -25,10 +25,6 @@ function App() {
     dispatch(handleClear());
   }
 
-  const saveMemory = () => {
-    
-  }
-
   const handleMemoryCall = (event) => {
     const memory = event.target.value
     if (memory === "M+"){
